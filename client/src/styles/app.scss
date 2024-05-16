@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+//colors
+$color-primary: rgb(46, 58, 46);
+$color-secondary: black;
+$color-text: white;
+
+//fonts
+$font-primary: 'Arial', sans-serif;
+$font-secondary: 'Times New Roman', serif;
+
+//sizes
+$size-small: 12px;
+$size-medium: 15px;
+$size-large: 20px;
+
+
+
+
+//header
+@layer components {
+  .header {
+    background-color: $color-primary;
+    font-family: $font-primary;
+    color: $color-text;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .headerLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    font-size: $size-large;
+  }
+  .headerLinks a:hover{
+    opacity: 0.7;
+  }
+  .accountDialog{
+    display: flex;
+    // justify-content: right;
+    flex-direction: column;
+    gap: 1vw;
+    background: whitesmoke;
+    position: absolute;
+    top: 4vw;
+    left: 22vw;
+    padding: 1vw;
+    height: fit-content;
+    width: 25vw;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  .sideMenu{
+    height: 100vh;
+    width: 18vw;
+    background: whitesmoke;
+    position: fixed;
+    left: 0;
+    top: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+  
+  .sideMenu .catalogues ul li:hover{
+    color: white;
+    background-color: $color-primary;
+    cursor: pointer;
+  }
+  .sideMenu .catalogues ul li{
+    font-size: $size-medium;
+    padding: 8px 5px 8px 20px;
+    cursor: pointer;
+    display: flex; gap: 10px; align-items: center;
+  }
+  .sideMenu {
+    animation: sideMenu 0.2s;
+  }
+  .dropSettings li{
+    font-size: 12px;
+    color: $color-primary;
+  }
+  .dropSettings li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .detail-modal{
+    animation: popUp 0.6s;
+  }
+
+
+
+
+  
+  @keyframes sideMenu {
+    from {
+      width: 0;
+    }
+    to {
+      width: 20vw;
+    }
+  }
+
+  @keyframes popUp {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  
+ 
+  
+}

@@ -1,0 +1,22 @@
+
+# client 
+client/node_modules
+client/build/
+client/dist/
+client/npm-debug.log*
+client/.tmp/
+
+# server
+server/node_modules
+server/db
+server/config.env
+server/*.log
+server/.tmp
+
+node_modules
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
