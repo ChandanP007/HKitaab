@@ -24,13 +24,7 @@ export const addTransaction = async (req, res) => {
 
 
     const ledgerPDF = await uploadPDF(req,res);
-    const { transaction, userDetails, receiver } = req.body;
-    const { gst, name, type } = userDetails;
-    const uploadedBy = {
-      gst,
-      name,
-      type,
-    };
+    const { transaction } = req.body;
 
     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
     const ledgers = JSON.parse(allLedgers);
@@ -44,9 +38,7 @@ export const addTransaction = async (req, res) => {
     const newTransaction = {
       id: generateId(15),
       transactionDetails,
-      uploadedBy,
-      receivedBy: JSON.parse(receiver),
-      ledgerPDF,
+      ledgerPDF : ledgerPDF ? ledgerPDF : null,
       confirmations: {
         sender: "success",
         receiver: "pending",
@@ -71,6 +63,7 @@ export const addTransaction = async (req, res) => {
     });
   }
 }
+
 export const getLedgers = async (req, res) => { 
     try {
         const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
@@ -85,4 +78,21 @@ export const getLedgers = async (req, res) => {
         message: err.message,
         });
     }
+}
+
+//admin
+export const getAllLedgers = async (req, res) => { 
+  try {
+      const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
+      const ledgers = JSON.parse(allLedgers);
+      res.json({
+      status: "success",
+      data: ledgers,
+      });
+  } catch (err) {
+      res.status(500).json({
+      status: "error",
+      message: err.message,
+      });
+  }
 }

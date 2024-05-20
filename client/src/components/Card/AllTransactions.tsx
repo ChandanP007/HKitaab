@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import Ledger from "./Ledger";
 import { useActiveActionContext } from "../../context/siteContext";
 import { getLedgers } from "../../hooks/userActions/getLedgers";
-
+ 
 
 const AllTransactions = ({businessgst}: any) => {
   //states
-  const { clientDomain } = useActiveActionContext();
+  const { clientDomain , user} = useActiveActionContext();
 
   // const [allMonths, setAllMonths] = useState<string[]>([]);
   const [allMonths2, setAllMonths2] = useState<string[]>([]);
@@ -16,13 +16,14 @@ const AllTransactions = ({businessgst}: any) => {
   
 
   useEffect(() => {
-      getLedgers(clientDomain).then((data) => {
+      getLedgers(clientDomain,user.role).then((data) => {
       setAllLedgersData(data);
       
       //setting month categories
       let months = data.map((ledger:any) => {
-        if(ledger.receivedBy.gst === businessgst)  
-          return ledger.month}
+        if(ledger.transactionDetails.receivedBy.gst === businessgst) 
+          return ledger.month
+        }
       );
       //pick unique months from months and set it to allMonths
       let uniqueMonths = [...new Set(months)];
@@ -54,7 +55,7 @@ const AllTransactions = ({businessgst}: any) => {
               <h2 className="text-lg pb-3 font-bold">{month}</h2>
               <div className="flex gap-5 overflow-x-scroll no-scrollbar">
                 {ledgersData.map((ledger) => {
-                  if(ledger.receivedBy.gst === businessgst)
+                  if(ledger.transactionDetails.uploadedBy.gst === user.user.gst && ledger.transactionDetails.receivedBy.gst === businessgst)
                     if (ledger.month === month){
                         return <Ledger key={ledger.id} {...ledger} />;
 

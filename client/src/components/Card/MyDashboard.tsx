@@ -14,10 +14,11 @@ type CardProps = {
 
 const MyDashboard = ({ gst, btype }: CardProps) => {
   const { clientDomain, user } = useActiveActionContext();
+  
 
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [pdf, setPdf] = useState<any>("");
-
+  const receiver = {gst: gst, btype: btype};
   //values
   const [visibility, setVisibility] = useState<any>({
     addtransaction: "hidden",
@@ -32,14 +33,11 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
     particulars: "",
     id: generateId(10).toUpperCase(),
     date: "",
-    pdf: "",
     gst: gst,
+    uploadedBy: user.user,
+    receivedBy: receiver,
   });
-  const receiver = {
-    gst,
-    btype,
-  };
-
+  
   //handlers
   const handleFileChange = (e: any) => {
     const file = e.target.files[0];
@@ -53,7 +51,7 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
     console.log(file);
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = () => {
     //check if the user has uploaded the pdf file and the transaction details
     if (
       !transaction.pdf ||
@@ -66,7 +64,7 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
     }
     console.log(transaction);
 
-    addTransaction(transaction, pdf, clientDomain, user, receiver);
+    addTransaction(transaction, pdf, clientDomain);
   };
 
   return (
@@ -190,7 +188,7 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
                   className="p-2 bg-black/50 font-semibold transition-all hover:bg-black/60 text-white rounded-md mt-5"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleSubmit(e);
+                    handleSubmit();
                   }}
                 >
                   Add Transaction
