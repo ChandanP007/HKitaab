@@ -1,0 +1,163 @@
+[
+  {
+    "id": "drMgkM4nSROcPh9",
+    "gst": "912929112",
+    "name": "Rosca Wlnc",
+    "type": "buyer",
+    "address": "Delhi, IN",
+    "email": "",
+    "thumbnail": ""
+  },
+  {
+    "id": "J00XvUN8nVW6fCd",
+    "gst": "23213123",
+    "name": "Rams Eens",
+    "type": "seller",
+    "address": "Jaipur, India",
+    "email": "",
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713455312/ledgerSite/ym8rhskzmtqiu705q1br.png"
+  },
+  {
+    "id": "7aNuBB3UsJDmGLf",
+    "gst": "90123902193",
+    "name": "Admin Account",
+    "type": "buyer",
+    "address": "India",
+    "email": "",
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713463008/ledgerSite/lk85uzjsoma4tcfvidez.jpg"
+  },
+  {
+    "id": "YsEZjDPBRxvdOrr",
+    "gst": "932492309",
+    "name": "Ankul Movers",
+    "type": "transporter",
+    "address": "Jamshedpur",
+    "email": "",
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713465246/ledgerSite/w3xlyvhjpnh53oomtpgp.jpg"
+  },
+  {
+    "id": "baRA8fbUFc0295S",
+    "gst": "98349328",
+    "name": "Nakul Garments",
+    "type": "seller",
+    "address": "Kolkata, India",
+    "email": "",
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713519463/ledgerSite/talhokyeitasezupxvly.jpg"
+  },
+  {
+    "id": "0SBubxs08xRfyNT",
+    "gst": "9823490830",
+    "name": "Test Account",
+    "type": "buyer",
+    "address": "Somewhere, Earth",
+    "email": "",
+    "relationships": [
+      {
+        "id": "fe8vzDiw8IS7VRA",
+        "name": "Nakul Garments",
+        "gstno": "98349328",
+        "address": "Kolkata, India",
+        "businessType": "seller",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713519463/ledgerSite/talhokyeitasezupxvly.jpg"
+      },
+      {
+        "id": "LLYV62EjGXG2WzQ",
+        "name": "Mukat Shipping",
+        "gstno": "090192039",
+        "address": "Gujrat, India",
+        "businessType": "transporter",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1714975561/ledgerSite/smtxijgclcqtunay9pjg.png"
+      },
+      {
+        "id": "EyLqwSFz07U67le",
+        "name": "Rosca Wlnc",
+        "gstno": "912929112",
+        "address": "Delhi, IN",
+        "businessType": "buyer",
+        "thumbnail": ""
+      }
+    ],
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713799091/ledgerSite/ixnyjxezya8rskt2fb1a.png"
+  },
+  {
+    "id": "rzoElTHKnZ63CVv",
+    "gst": "45645456",
+    "name": "Test 2",
+    "type": "seller",
+    "address": "Kolkata, India",
+    "email": "",
+    "relationships": [
+      {
+        "id": "eMpPx3haUn4BlJ7",
+        "name": "Nakul Garments",
+        "gstno": "98349328",
+        "address": "Kolkata, India",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713519463/ledgerSite/talhokyeitasezupxvly.jpg"
+      },
+      {
+        "id": "VAymRxmQs949b7m",
+        "name": "Mukat Remed",
+        "gstno": "912983980",
+        "address": "Gujrat, IN",
+        "businessType": "seller",
+        "thumbnail": "https://via.placeholder.com/150"
+      },
+      {
+        "id": "RW9qBhOSgv41FY1",
+        "name": "Businesss",
+        "gstno": "1231231",
+        "address": "Sdfslk S",
+        "businessType": "transporter",
+        "thumbnail": "https://via.placeholder.com/150"
+      }
+    ],
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713890161/ledgerSite/vrirrhl7qkqhq8kmtu7m.png"
+  },
+  {
+    "id": "vntwXjzuvBkGi1k",
+    "gst": "090192039",
+    "name": "Mukat Shipping",
+    "type": "transporter",
+    "address": "Gujrat, India",
+    "email": "",
+    "relationships": [
+      {
+        "id": "Noqzo1mDyGbYYKV",
+        "name": "Nakul Garments",
+        "gstno": "98349328",
+        "address": "Kolkata, India",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713519463/ledgerSite/talhokyeitasezupxvly.jpg"
+      },
+      {
+        "id": "kp7RfroiqmXo94g",
+        "name": "Test 2",
+        "gstno": "45645456",
+        "address": "Kolkata, India",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713890161/ledgerSite/vrirrhl7qkqhq8kmtu7m.png"
+      }
+    ],
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1714975561/ledgerSite/smtxijgclcqtunay9pjg.png"
+  },
+  {
+    "id": "OOiBS5wY8JOLq86",
+    "gst": "981020390",
+    "name": "RS Solutions",
+    "type": "agent",
+    "address": "Chennai, IN",
+    "email": "",
+    "relationships": [
+      {
+        "id": "2cmsgcmZ4tSJtTu",
+        "name": "Mukat Shipping",
+        "gstno": "090192039",
+        "address": "Gujrat, India",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1714975561/ledgerSite/smtxijgclcqtunay9pjg.png"
+      }
+    ],
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1715160416/ledgerSite/c7vywgehfykhx9rpuz7n.png"
+  }
+]

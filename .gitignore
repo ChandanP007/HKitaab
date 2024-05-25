@@ -8,7 +8,7 @@ client/.tmp/
 
 # server
 server/node_modules
-server/db
+# server/db
 server/config.env
 server/*.log
 server/.tmp
