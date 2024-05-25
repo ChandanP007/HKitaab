@@ -6,21 +6,19 @@ import { useActiveActionContext } from '../../context/siteContext.tsx'
 import Loader from "../../components/Main/Loader.tsx";
 import Header from "../../components/Main/Header.tsx";
 import Footer from '../../components/Main/Footer.tsx'
-import { Navigate } from "react-router-dom";
 import Businesses from "../Businesses/Businesses.tsx";
+import Landing from "./Landing.tsx";
 
 
 const Home = () => {
 
   const {user, isLoggedIn} = useActiveActionContext();
-  // if(user.role === "admin"){[
-  //   console.log("Hey admin")
-  // ]}
-  // console.log(user);
   return (
       <>
       {
-        !isLoggedIn ? <Navigate to="/login"/>:
+        !isLoggedIn ? 
+        <Landing/>
+        :
         
         <>
         <Header loggedUser={user.user}/>

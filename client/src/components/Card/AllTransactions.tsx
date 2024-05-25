@@ -18,6 +18,7 @@ const AllTransactions = ({businessgst}: any) => {
   useEffect(() => {
       getLedgers(clientDomain).then((data) => {
       setAllLedgersData(data);
+      console.log(data);
       
       //setting month categories
       let months = data.map((ledger:any) => {

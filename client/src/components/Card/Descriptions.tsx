@@ -25,8 +25,6 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
   const [detailsPane, setDetailsPane] = useState<string>("MyDashboard");
   const [requestedLedgersGst, setRequestedLedgersGst] = useState<string>();
 
-  // console.log(requestedLedgersGst);
-
   return (
     <main>
 
@@ -60,8 +58,12 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
                 Email : <span className="font-semibold">{email}</span>
               </li> */}
             </ul>
+            <div className="p-5">
+                <h2 className="text-xl">Quick Actions</h2>
+            </div>
           </div>
         </div>
+      
 
 {/* Navigation  */}
         <div className="flex flex-col gap-2 p-3 text-sm border-l-[1px] ">

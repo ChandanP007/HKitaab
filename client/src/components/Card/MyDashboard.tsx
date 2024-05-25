@@ -53,7 +53,7 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
     console.log(file);
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = () => {
     //check if the user has uploaded the pdf file and the transaction details
     if (
       !transaction.pdf ||
@@ -64,9 +64,10 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
       alert("Please fill all the fields and upload the pdf file");
       return;
     }
-    console.log(transaction);
+    // console.log(transaction);
 
-    addTransaction(transaction, pdf, clientDomain, user, receiver);
+    addTransaction(transaction, pdf, clientDomain, user.user, receiver);
+    
   };
 
   return (
@@ -190,7 +191,7 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
                   className="p-2 bg-black/50 font-semibold transition-all hover:bg-black/60 text-white rounded-md mt-5"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleSubmit(e);
+                    handleSubmit();
                   }}
                 >
                   Add Transaction
