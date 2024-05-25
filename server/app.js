@@ -24,7 +24,7 @@ cloudinary.v2.config({
 app.use(cookieParser(
 ));
 app.use(cors({
-    origin: ['http://localhost:5173', process.env.CLIENT_URI],
+    origin: ['http://localhost:5173', 'https://hisaabkitaab.ai', process.env.CLIENT_URI],
     credentials: true,
     AccessControlAllowOrigin: ['http://localhost:5173', process.env.CLIENT_URI],
     AccessControlAllowCredentials: true
