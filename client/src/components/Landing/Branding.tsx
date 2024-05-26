@@ -68,13 +68,13 @@ const Branding = () => {
           </h1>
         </section>
         <section className="flex flex-col gap-3">
-          <h2 className="bg-black/70 p-5 w-[400px] text-center text-white rounded-md">
+          <h2 className="bg-gray-500 p-7 border-[1px] w-[400px] text-center text-white rounded-lg shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
-          <h2 className="bg-black/70 p-5 w-[400px] text-center text-white rounded-md">
+          <h2 className="bg-gray-500 p-7 border-[1px] w-[400px] text-center text-white rounded-lg shadow-lg">
             Use actionable insights to drive your{" "}
           </h2>
-          <h2 className="bg-black/70 p-5 w-[400px] text-center text-white rounded-md">
+          <h2 className="bg-gray-500 p-7 border-[1px] w-[400px] text-center text-white rounded-lg shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
         </section>

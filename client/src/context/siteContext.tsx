@@ -12,8 +12,6 @@ export const useActiveActionContext = ():any => {
 export const ActiveActionProvider = ({children}:any) => {
 
     //client domain
-    // const [clientDomain] = useState('https://ledge-server.onrender.com/api/business')
-    // const [clientDomain] = useState('http://3.208.20.231:3000/api/business')
     const [clientDomain] = useState('http://localhost:3000/api/business')
 
     const [Selected, setSelected] = useState<any>({
