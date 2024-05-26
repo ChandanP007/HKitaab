@@ -128,7 +128,9 @@ const Header = (loggedUser: any) => {
                 <hr></hr>
                 <section className="p-3">
                   <ul className="flex flex-col gap-3 ">
-                    <li className="hover:underline hover:font-semibold cursor-pointer p-1">
+                    <li 
+                    onClick={()=> window.location.href="/me/profile"}
+                    className="hover:underline hover:font-semibold cursor-pointer p-1">
                       Profile
                     </li>
                     <li className="hover:underline hover:font-semibold cursor-pointer p-1">
