@@ -34,7 +34,7 @@ const Hero = () => {
           <h1 className="text-[3rem] w-[750px]">
             Effortlessly Manage Your Ledgers and Streamline Business Operations
           </h1>
-          <p className="my-10 text-black/50 text-xl">
+          <div className="my-10 text-black/50 text-xl">
             {/* Simplify Your Business Management with AI-Powered Tools */}
             <Typewriter
               options={{
@@ -50,7 +50,7 @@ const Hero = () => {
                 typewriter.changeDeleteSpeed("natural");
               }}
             />
-          </p>
+          </div>
           <button
             className="
             bg-black/70 border-2 text-white 

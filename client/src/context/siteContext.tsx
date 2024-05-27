@@ -12,7 +12,7 @@ export const useActiveActionContext = ():any => {
 export const ActiveActionProvider = ({children}:any) => {
 
     //client domain
-    const [clientDomain] = useState('http://localhost:3000/api/business')
+    const clientDomain = import.meta.env.VITE_APP_NODE_ENV == 'PRODUCTION' ? import.meta.env.VITE_APP_API_URI : "http://localhost:3000/api/business";
 
     const [Selected, setSelected] = useState<any>({
         buyers: true,
@@ -22,6 +22,8 @@ export const ActiveActionProvider = ({children}:any) => {
         services: false
     })
     const [isDialogOpen, setDialogOpen] = useState<boolean>(false);
+
+    
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
     let [user, setUser] = useState<any>({
         
@@ -34,11 +36,12 @@ export const ActiveActionProvider = ({children}:any) => {
             return;
           }
           const res = await axios.get(`${clientDomain}/me`,{withCredentials: true});
-          setUser(res.data);
-          setIsLoggedIn(true);
+          if(res.status == 200){
+            setUser(res.data);
+            setIsLoggedIn(true);
+          }
         } catch (err) {
-          console.log(err)
-          
+          console.log(err);
         }
       }
     useEffect(() => {
