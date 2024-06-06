@@ -7,7 +7,7 @@ import Loader from "../../components/Main/Loader.tsx";
 import Header from "../../components/Main/Header.tsx";
 import Footer from '../../components/Main/Footer.tsx'
 import Businesses from "../Businesses/Businesses.tsx";
-import Landing from "./Landing.tsx";
+import Landing from "./SiteLanding.tsx";
 
 
 const Home = () => {
