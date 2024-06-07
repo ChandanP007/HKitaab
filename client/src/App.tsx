@@ -7,7 +7,7 @@ import {lazy, Suspense} from 'react'
 import './styles/app.scss'
 import Loader from './components/Main/Loader'
 import Landing from './pages/HomePage/SiteLanding'
-import Home from './pages/HomePage/HomePage'
+import Home from './pages/HomePage/MainLayout'
 const Register = lazy(()=>import('./pages/AuthPages/register'))
 const Login = lazy(()=>import('./pages/AuthPages/login'))
 const MyProfile = lazy(()=>import('./components/Main/MyProfile'))
