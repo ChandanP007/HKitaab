@@ -24,9 +24,9 @@ const Footer = () => {
 
         {/* Bottom */}
         
-        <section className="flex flex-col sm:flex-row items-center justify-between p-5 sm:p-14 gap-5">
-          <h2 className="text-2xl font-bold">HisaabKitaab</h2>
-          <p className="font-light text-[15px] sm:text-sm">
+        <section className="flex flex-col sm:flex-row items-center justify-between p-5 mt-20 sm:mt-0 sm:p-14 gap-5">
+          <h2 className="text-xl sm:text-2xl font-bold">HisaabKitaab</h2>
+          <p className="font-light text-[12px] sm:text-sm">
             © 2024 HisaabKitaab Inc. Manage Cookies | Privacy 
           </p>
         </section>

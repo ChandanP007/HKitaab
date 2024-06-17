@@ -83,7 +83,7 @@ const Hero = () => {
     </main>
 
     {/* Mobile View  */}
-    <main className="sm:hidden py-8">
+    <main className="sm:hidden pt-8 pb-20">
       <nav className="flex items-center justify-between">
         <h1 className="font-bold text-2xl p-4 ">HisaabKitaab</h1>
         <button
@@ -100,15 +100,16 @@ const Hero = () => {
           > 
             Sign In
           </button>
+          
       </nav>
 
       <section className="">
         <section className="mt-12 w-[100vw] px-4">
-          <h1 className="text-[30px] font-bold ">
+          <h1 className="text-[30px] font-thin ">
             Effortlessly Manage<br></br> Your Ledgers and Streamline Business Operations
           </h1>
 
-          <div className="mt-10 text-black/50 text-lg min-h-[70px]">
+          <div className="mt-10 text-black/50 text-md font-bold sm:text-lg min-h-[70px]">
             {/* Simplify Your Business Management with AI-Powered Tools */}
             <Typewriter
               options={{
@@ -124,6 +125,7 @@ const Hero = () => {
                 typewriter.changeDeleteSpeed("natural");
               }}
             />
+            
           </div>
 
           
