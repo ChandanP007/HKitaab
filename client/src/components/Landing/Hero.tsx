@@ -2,7 +2,10 @@ import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
-    <main className="p-12">
+    <>
+    
+    {/* Desktop View  */}
+    <main className="hidden sm:block p-12">
       <nav className="flex items-center justify-center mb-16">
         <h1 className="font-bold text-2xl">HisaabKitaab</h1>
         <ul className="flex items-center gap-10 ml-auto">
@@ -78,6 +81,59 @@ const Hero = () => {
         </aside>
       </section>
     </main>
+
+    {/* Mobile View  */}
+    <main className="sm:hidden py-8">
+      <nav className="flex items-center justify-between">
+        <h1 className="font-bold text-2xl p-4 ">HisaabKitaab</h1>
+        <button
+            className="
+            bg-black text-white shadow-md
+            transition-all duration-300
+            p-3 mr-5 w-[110px]
+            text-sm 
+            mt- rounded-full
+            font-semibold
+            
+            "
+            onClick={() => (window.location.href = "/login")}
+          > 
+            Sign In
+          </button>
+      </nav>
+
+      <section className="">
+        <section className="mt-12 w-[100vw] px-4">
+          <h1 className="text-[30px] font-bold ">
+            Effortlessly Manage<br></br> Your Ledgers and Streamline Business Operations
+          </h1>
+
+          <div className="mt-10 text-black/50 text-lg min-h-[70px]">
+            {/* Simplify Your Business Management with AI-Powered Tools */}
+            <Typewriter
+              options={{
+                strings: [
+                  "Simplify Your Business Management with AI-Powered Tools",
+                  "Enhance Decision-Making with Data-Driven AI Insights.",
+                  "Automate Routine Tasks and Focus on Growth with Smart AI Tools.",
+                ],
+                autoStart: true,
+                loop: true,
+              }}
+              onInit={(typewriter) => {
+                typewriter.changeDeleteSpeed("natural");
+              }}
+            />
+          </div>
+
+          
+         
+        </section>
+      </section>
+      </main>
+    
+
+    </>
   );
 };
 

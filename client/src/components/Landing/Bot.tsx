@@ -9,7 +9,7 @@ const Bot = () => {
   return (
     <>
     
-      <div className="max-w-md p-4 fixed z-1000 bottom-24 right-24">
+      <div className="hidden sm:block max-w-md p-4 fixed z-1000 bottom-24 right-24">
 
         <button
           onClick={() => setChatOpen(!chatOpen)}

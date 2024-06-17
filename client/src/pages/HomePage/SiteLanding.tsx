@@ -6,10 +6,10 @@ import Footer from "../../components/Landing/Footer"
 
 const Landing = () => {
   return (
-    <main className="">
+    <main className="w-full">
       <Hero/>
       <Branding/> 
-      <Bot/>
+      <Bot />
       <Footer/>
     </main>
   )

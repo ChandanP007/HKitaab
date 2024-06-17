@@ -5,13 +5,14 @@ import Review from "./Review";
 
 const Branding = () => {
   return (
-    <main className="">
+    <main>
+      <hr className="block sm:hidden border-4"></hr>
       {/* Why choose HisaabKitaab ?  */}
-      <section className=" my-20 flex flex-col items-center bg-gray-100 p-5">
-        <h1 className="text-4xl font-bold text-center p-12">
+      <section className=" sm:my-20 flex flex-col items-center sm:bg-gray-100 p-5">
+        <h1 className="text-4xl font-bold text-center p-5 sm:p-12">
           Why choose HisaabKitaab?
         </h1>
-        <div className="flex justify-center gap-32 mt-5 w-full">
+        <div className="flex flex-wrap justify-center gap-10 sm:gap-32 mt-5 w-[100vw]">
           <div className="flex flex-col gap-5 justify-center items-center">
             <MdOutlineAccountTree className="text-9xl text-center" />
             <h2
@@ -56,11 +57,13 @@ const Branding = () => {
               User-Friendly Interface
             </p>
           </div>
+
         </div>
+
       </section>
 
       {/* Features */}
-      <section className="m-32 flex justify-around items-center">
+      <section className="hidden sm:flex m-32 justify-around items-center">
         <section>
           <h1 className="text-5xl font-bold ">
             Empower <br></br>Your Business <br></br> with <br></br>Cutting-Edge
@@ -81,12 +84,12 @@ const Branding = () => {
       </section>
 
       {/* Testinomials */}
-      <section className="my-32 h-[50vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
+      <section className="sm:my-32 h-[50vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
         <h1 className="text-4xl font-bold text-center p-12">
-          What our users say
+          What our client says
         </h1>
 
-        <section className="flex justify-center w-full p-5 gap-24">
+        <section className="flex flex-wrap justify-center w-full overflow-y-scroll p-5 gap-24">
           <Review
             user="Nitish Verma"
             content="This tool has revolutionized our accounting processes. The automation feature is a game-changer"
