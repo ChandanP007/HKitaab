@@ -25,7 +25,7 @@ const Branding = () => {
             >
               1
             </h2>
-            <p className="font-semibold w-[200px] text-center text-sm sm:text-md">
+            <p className="font-semibold w-[170px] sm:w-[200px] text-center text-sm sm:text-md">
               Automatic Ledger Management
             </p>
           </div>
@@ -34,7 +34,7 @@ const Branding = () => {
             <h2 className="text-2xl bg-black text-white p-2 w-[49px] text-center rounded-full">
               2
             </h2>
-            <p className="font-semibold w-[200px] text-center text-sm sm:text-md">
+            <p className="font-semibold w-[170px] sm:w-[200px] text-center text-sm sm:text-md">
               Intelligent Insights
             </p>
           </div>
@@ -44,7 +44,7 @@ const Branding = () => {
             <h2 className="text-2xl bg-black text-white p-2 w-[49px] text-center rounded-full">
               3
             </h2>
-            <p className="font-semibold w-[200px] text-center text-sm sm:text-md">
+            <p className="font-semibold w-[170px] sm:w-[200px] text-center text-sm sm:text-md">
               Secure and Reliable
             </p>
           </div>
@@ -53,7 +53,7 @@ const Branding = () => {
             <h2 className="text-2xl bg-black text-white p-2 w-[49px] text-center rounded-full">
               4
             </h2>
-            <p className="font-semibold w-[200px] text-center text-sm sm:text-md">
+            <p className="font-semibold w-[170px] sm:w-[200px] text-center text-sm sm:text-md">
               User-Friendly Interface
             </p>
           </div>
@@ -78,21 +78,21 @@ const Branding = () => {
             alt="hero-image"
           />
         <section className="flex items-center flex-col gap-3 py-20 sm:py-0">
-          <h2 className="bg-gray-800 p-7 border-[1px] w-[400px] text-center text-white rounded-lg shadow-lg">
+          <h2 className="bg-gray-800 p-7 border-[1px] w-[350px] sm:[400px] text-center text-white rounded-lg shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
-          <h2 className="bg-gray-800 p-7 border-[1px] w-[400px] text-center text-white rounded-lg shadow-lg">
+          <h2 className="bg-gray-800 p-7 border-[1px] w-[350px] sm:[400px] text-center text-white rounded-lg shadow-lg">
             Use actionable insights to drive your{" "}
           </h2>
-          <h2 className="bg-gray-800 p-7 border-[1px] w-[400px] text-center text-white rounded-lg shadow-lg">
+          <h2 className="bg-gray-800 p-7 border-[1px] w-[350px] sm:[400px] text-center text-white rounded-lg shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
         </section>
       </section>
 
       {/* Testinomials */}
-      <section className="sm:my-32 h-[50vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
-        <h1 className="text-2xl sm:text-4xl font-bold text-center p-12">
+      <section className="sm:my-32 h-[75vh] sm:h-[70vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
+        <h1 className="text-2xl sm:text-4xl font-bold text-center py-8 sm:p-12">
           What our client says
         </h1>
 

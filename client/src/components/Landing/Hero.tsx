@@ -105,11 +105,11 @@ const Hero = () => {
 
       <section className="">
         <section className="mt-12 w-[100vw] px-4">
-          <h1 className="text-[30px] font-thin ">
+          <h1 className="text-[30px] font-semibold ">
             Effortlessly Manage<br></br> Your Ledgers and Streamline Business Operations
           </h1>
 
-          <div className="mt-10 text-black/50 text-md font-bold sm:text-lg min-h-[70px]">
+          <div className="mt-10 text-black/50 text-md font-light sm:text-lg min-h-[70px]">
             {/* Simplify Your Business Management with AI-Powered Tools */}
             <Typewriter
               options={{
