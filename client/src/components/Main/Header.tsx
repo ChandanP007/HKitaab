@@ -7,6 +7,7 @@ import { generateDp } from "../../utils/dpGenerator";
 import { IoMdClose } from "react-icons/io";
 import { useLogout } from "../../hooks/userAuth/useLogout";
 import { searchBusiness } from "../../hooks/userActions/searchBusiness";
+import { CiLogout } from "react-icons/ci";
 
 const Header = (loggedUser: any) => {
   //states
@@ -14,6 +15,13 @@ const Header = (loggedUser: any) => {
   const { isDialogOpen, clientDomain } = useActiveActionContext();
   const [showResultsDialog, setResultsDialog] = useState<boolean>(false);
   const [searchResults, setSearchResults] = useState<any>([]);
+
+  const bgDrop = isDialogOpen ? "blur-sm" : "";
+  const username = loggedUser.loggedUser.name;
+  const firstname = username.split(" ")[0];
+  const dp = loggedUser.loggedUser.thumbnail
+    ? loggedUser.loggedUser.thumbnail
+    : generateDp(username, true);
 
   //handlers
   const handleBusinessSearch = async (e: any) => {
@@ -24,26 +32,15 @@ const Header = (loggedUser: any) => {
     !res ? setSearchResults([]) : setSearchResults(res);
   };
 
-  //contexts
-  const bgDrop = isDialogOpen ? "blur-sm" : "";
-  const username = loggedUser.loggedUser.name;
-  const firstname = username.split(" ")[0];
-
-  const dp = loggedUser.loggedUser.thumbnail
-    ? loggedUser.loggedUser.thumbnail
-    : generateDp(username, true);
-
   return (
     <>
       {/* Large screens */}
       <main>
-        <header
-          className={`bg-gray-100 text-black shadow-sm p-4 text-sm sticky w-full z-10 ${bgDrop}`}
+        {/* Desktop View  */}
+        <header className={`hidden sm:block bg-gray-100 text-black shadow-sm p-4 text-sm sticky w-full z-10 ${bgDrop}`}
         >
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-md">
-              HisaabKitaab
-            </h1>
+            <h1 className="text-3xl font-bold text-md">HisaabKitaab</h1>
 
             <div className="flex gap-3 text-black">
               <div className="flex items-center">
@@ -128,9 +125,10 @@ const Header = (loggedUser: any) => {
                 <hr></hr>
                 <section className="p-3">
                   <ul className="flex flex-col gap-3 ">
-                    <li 
-                    onClick={()=> window.location.href="/me/profile"}
-                    className="hover:underline hover:font-semibold cursor-pointer p-1">
+                    <li
+                      onClick={() => (window.location.href = "/me/profile")}
+                      className="hover:underline hover:font-semibold cursor-pointer p-1"
+                    >
                       Profile
                     </li>
                     <li className="hover:underline hover:font-semibold cursor-pointer p-1">
@@ -154,6 +152,23 @@ const Header = (loggedUser: any) => {
             </dialog>
           </div>
         </header>
+
+        {/* Mobile View */}
+        <header className="flex sticky w-full top-0 z-10 justify-between shadow-lg items-center sm:hidden p-5 bg-black text-white">
+        <div
+              className="flex gap-2 items-center cursor-pointer"
+              onClick={() => {
+                showDialog ? setShowDialog(false) : setShowDialog(true);
+              }}
+            >
+              <img src={dp} className="w-12 h-12 rounded-full text-white" />
+              <h1 className="font-thin flex flex-col">
+                Welcome,<span className="font-semibold"> {username}</span>
+              </h1>
+            </div>
+            <CiLogout className="text-3xl text-white" onClick={() => useLogout(clientDomain)}/>
+        </header>
+              
       </main>
     </>
   );

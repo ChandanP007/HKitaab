@@ -8,11 +8,11 @@ const Branding = () => {
     <main>
       <hr className="block sm:hidden border-4"></hr>
       {/* Why choose HisaabKitaab ?  */}
-      <section className=" sm:my-20 flex flex-col items-center sm:bg-gray-100 p-5">
-        <h1 className="text-4xl font-bold text-center p-5 sm:p-12">
+      <section className="mb-24 sm:my-20 flex flex-col items-center sm:bg-gray-100 p-5">
+        <h1 className="text-3xl my-5 sm:text-4xl font-bold text-center p-3 sm:p-12">
           Why choose HisaabKitaab?
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-32 mt-5 w-[100vw]">
+        <div className="flex flex-wrap justify-center gap-4 gap-y-10 sm:gap-32 mt-5 w-[100vw]">
           <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0">
             <MdOutlineAccountTree className="text-7xl sm:text-9xl text-center" />
             <h2
@@ -21,6 +21,7 @@ const Branding = () => {
              text-white p-2 w-[49px] 
              text-center rounded-full
              hidden sm:block
+             
              "
             >
               1
@@ -77,23 +78,24 @@ const Branding = () => {
           src="https://res.cloudinary.com/dkzo1creb/image/upload/fl_preserve_transparency/v1716628001/transactionsss_usx9g9.jpg?_s=public-apps"
           alt="hero-image"
         />
-        <section className="flex items-center flex-col gap-3 py-20 sm:py-0 text-sm sm:text-md">
-          <h2 className="bg-gray-800 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-white rounded-lg shadow-lg">
+        <section className="flex items-center flex-col gap-3 py-10 mb-10 sm:mb-0 sm:py-0 text-sm sm:text-md">
+          <h2 className="bg-gray-300 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-black rounded-xl shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
-          <h2 className="bg-gray-800 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-white rounded-lg shadow-lg">
-            Use actionable insights to drive your{" "}
+          <h2 className="bg-gray-300 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-black rounded-xl shadow-lg">
+          Enhance Decision-Making with Data-Driven AI Insights
           </h2>
-          <h2 className="bg-gray-800 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-white rounded-lg shadow-lg">
+          <h2 className="bg-gray-300 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-black rounded-xl shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
         </section>
       </section>
 
       {/* Testinomials */}
+      <hr className="block sm:hidden border-4"></hr>
       <section className="sm:my-32 h-[75vh] sm:h-[70vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
-        <h1 className="text-4xl font-bold text-center py-8 sm:p-12">
-          What Our Customers Say
+        <h1 className="text-3xl sm:text-4xl font-bold text-center py-8 sm:p-12">
+          What Our User Says 
         </h1>
 
         <section className="flex flex-wrap justify-center w-full overflow-y-scroll p-5 gap-3 sm:gap-24">

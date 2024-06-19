@@ -8,7 +8,7 @@ const Footer = () => {
           <section>
             <h1 className="text-3xl sm:text-5xl font-bold ">
               Improve your Productivity. <br></br>Use HisaabKitaab to get your{" "}
-              <br></br> Clients together.
+              <br/> Clients together.
             </h1>
             <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:w-[150px] bg-black/70 hover:bg-black transition-all ">
               Get Started

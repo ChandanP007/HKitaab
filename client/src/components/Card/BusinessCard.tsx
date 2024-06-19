@@ -31,21 +31,21 @@ const BusinessCard = ({gst,title,src,address,email,btype}:CardProps) => {
   
   return (
     <>
-      <div className={`flex flex-col border-2 cursor-pointer rounded-lg hover:shadow-md ${bgDrop}`}>
-        <img src={src} className="w-72 h-40 object-cover"/>
+      <div className={`flex sm:flex-col items-center justify-center px-5 sm:px-0 sm:justify-normal border-[1px] sm:border-2 cursor-pointer sm:rounded-lg hover:shadow-md ${bgDrop}`}>
+        <img src={src} className="rounded-full sm:rounded-none w-12 sm:w-72 h-12 sm:h-40 object-cover"/>
         <div className="p-3 text-sm text-left flex items-center justify-between ">
           <section>
-            <h1 className="text-lg truncate w-52 font-bold">{title}</h1>
-            <p className="font-extralight text-[13px] pt-2">{address ? address : "address not found"}</p>
+            <h1 className="text-sm sm:text-lg truncate w-52 font-bold">{title}</h1>
+            <p className="font-extralight text-[12px] sm:text-[13px] sm:pt-2">{address ? address : "address not found"}</p>
             <p className="font-medium text-[12px]">{email ? email : ""}</p>
           </section>
-          <section className="flex flex-col items-center">
+          <section className="hidden sm:flex flex-col items-center">
             <img src={generateDp(title,true)} alt="" className="h-10 rounded-full"/>
             <p className=" text-[8px]">Managed by</p>
           </section>
             
         </div>
-          <button className="text-black bg-gray-100 text-sm p-1 hover:bg-gray-200 hover:underline" onClick={()=>setShowDialog(true)}>View</button>
+          <button className="text-black text-sm p-1  hover:underline" onClick={()=>setShowDialog(true)}>View</button>
       </div>
 
       {/* Details Dialog */}

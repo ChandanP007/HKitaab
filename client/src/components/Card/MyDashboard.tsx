@@ -72,7 +72,7 @@ const MyDashboard = ({ gst, btype }: CardProps) => {
 
   return (
     <>
-      <main className="flex gap-5">
+      <main className="hidden sm:flex gap-5">
         <div>
           <h2 className="font-semibold text-lg my-5">
             Create/Manage Resources

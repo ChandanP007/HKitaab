@@ -29,7 +29,7 @@ const login = () => {
   return (
    
       <main className="min-h-[100vh] w-full flex justify-center items-center">
-        <div className="border-2 p-5 w-[400px]">
+        <div className=" p-5 w-[400px]">
           <h1 className="font-thin text-center text-xl mb-4">Login</h1>
           <form >
             <section className="flex flex-col">
