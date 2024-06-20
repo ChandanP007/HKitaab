@@ -157,9 +157,7 @@ const Header = (loggedUser: any) => {
         <header className="flex sticky w-full top-0 z-10 justify-between shadow-lg items-center sm:hidden p-5 bg-black text-white">
         <div
               className="flex gap-2 items-center cursor-pointer"
-              onClick={() => {
-                showDialog ? setShowDialog(false) : setShowDialog(true);
-              }}
+              onClick={() => (window.location.href = "/me/profile")}
             >
               <img src={dp} className="w-12 h-12 rounded-full text-white" />
               <h1 className="font-thin flex flex-col">

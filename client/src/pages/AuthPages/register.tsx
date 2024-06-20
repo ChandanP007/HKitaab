@@ -48,30 +48,32 @@ const register = () => {
     <>
       <main>
         {/* Navbar Larger Screens  */}
-        <section className="bg-gray-100 shadow-sm p-5 flex justify-between">
-          <h1 className="text-xl">Site-Title</h1>
+        <section className="bg-gray-100 shadow-sm sm:h-[100px] p-5 flex flex-col justify-between">
+          <h1 className="text-2xl font-bold py-5 sm:py-0">HisaabKitaab</h1>
+          <p className="text-gray-400 text-xs">Simplify your business management with AI-Powered Tools </p>
           {/* <FaUser className="text-xl"/> */}
         </section>
 
         {/* Registration form  */}
-        <h1 className="text-3xl font-light pt-10 text-center">
+        <h1 className="text-xl hidden sm:block sm:text-3xl font-light p-5 text-center bg-black text-white sm:bg-white sm:text-black">
           Register/ Business Registration
         </h1>
-        <section className="flex p-10 justify-center ">
+        <section className="flex sm:p-10 justify-center ">
+
           {/* Registration Form  */}
           <form onSubmit={handleSubmit}>
-            <div className="registration-form flex p-5 gap-10 justify-center w-[65vw] h-[55vh]">
+            <div className="registration-form flex flex-col sm:flex-row p-5 sm:gap-10 justify-center sm:w-[65vw] sm:h-[55vh]">
               {/* Login Details  */}
-              <section className="flex flex-col">
+              <section className="flex flex-col pt-5 sm:pt-0">
                 <div className="flex flex-col gap-3">
-                  <h1 className=" text-[15px] font-semibold text-black/70 text-center p-3">
+                  <h1 className=" text-[15px] font-semibold text-black/70 sm:text-center sm:p-3">
                     Login Details
                   </h1>
                   <input
                     type="text"
                     name="user_email"
                     placeholder="Email"
-                    className="p-2 border-[1px]  outline-none text-sm w-[300px]"
+                    className="p-2 border-[1px]  outline-none text-sm sm:w-[300px]"
                     value={user.user_email}
                     onChange={(e) =>
                       setUser({ ...user, user_email: e.target.value })
@@ -130,11 +132,12 @@ const register = () => {
                   </div> */}
                 </div>
               </section>
+              
 
               {/* Business Details  */}
-              <section className="flex flex-col w-[500px]">
+              <section className="flex flex-col sm:w-[500px] mt-10 sm:mt-0">
                 <div className="flex flex-col gap-3">
-                  <h1 className=" text-[15px] font-semibold text-black/70 text-center p-3">
+                  <h1 className=" text-[15px] font-semibold text-black/70 sm:text-center sm:p-3">
                     Business Details
                   </h1>
                   <div className="flex gap-5">
@@ -211,16 +214,16 @@ const register = () => {
               </section>
 
               {/* Business Preview */}
-              <section className="flex flex-col w-[250px]">
-                <div className="flex flex-col gap-3">
-                  <h1 className=" text-[15px] font-semibold text-black/70 text-center p-3">
+              <section className="flex flex-col sm:w-[250px]">
+                <div className="flex sm:flex-col gap-3">
+                  <h1 className="hidden sm:block text-[15px] font-semibold text-black/70 text-center p-3">
                     Preview
                   </h1>
-                  <div className="flex justify-center items-center">
+                  <div className="sm:flex sm:justify-center items-center hidden ">
                     <img
                       src={business.thumbnail ? business.thumbnail : dp}
                       alt="Business Logo"
-                      className="w-[150px] h-[150px] object-contain rounded-full"
+                      className="w-[50px] sm:w-[150px] h-[50px] sm:h-[150px] object-contain rounded-full"
                     />
                   </div>
                   <ul className="text-center font-thin text-green-700">
@@ -245,10 +248,10 @@ const register = () => {
                 </button>
               </section>
               <div>
-                <p className="text-center p-5">
+                <p className="text-center p-7 sm:p-5 text-md">
                   Already Registered?{" "}
                   <Link to="/login" className="underline">
-                    Go to login
+                    Login
                   </Link>
                 </p>
               </div>

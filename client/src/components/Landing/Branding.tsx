@@ -9,7 +9,7 @@ const Branding = () => {
       <hr className="block sm:hidden border-4"></hr>
       {/* Why choose HisaabKitaab ?  */}
       <section className="mb-24 sm:my-20 flex flex-col items-center sm:bg-gray-100 p-5">
-        <h1 className="text-3xl my-5 sm:text-4xl font-bold text-center p-3 sm:p-12">
+        <h1 className="text-3xl my-5 sm:text-4xl font-bold text-center sm:p-12">
           Why choose HisaabKitaab?
         </h1>
         <div className="flex flex-wrap justify-center gap-4 gap-y-10 sm:gap-32 mt-5 w-[100vw]">
