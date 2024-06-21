@@ -7,7 +7,8 @@ import { useState } from "react";
 import AllTransactions from "./AllTransactions";
 import MyDashboard from "./MyDashboard";
 import { IoStatsChartOutline } from "react-icons/io5";
-import { CiSearch } from "react-icons/ci";
+// import { CiCirclePlus, CiSearch } from "react-icons/ci";
+import { FiList, FiMail, FiPlusCircle } from "react-icons/fi";
 
 
 
@@ -38,7 +39,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
           <img src={src} alt="" className="rounded-full h-[50px]"/>
           <div>
             <h1 className="text-md font-bold">{title}</h1>
-            <h1 className="text-sm font-thing">{gst}</h1>
+            <h1 className="text-sm font-light">GST : {gst}</h1>
           </div>
         </p>
       </section>
@@ -144,12 +145,43 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
          </div>
          
          <hr className="text-black my-3 "/>
-         <div className="flex gap-2 items-center mt-5 px-2">
+
+  
+         <h1 className="font-semibold text-sm p-3">Quick actions</h1>
+         <div className="flex gap-3 p-3 font-semibold">
+              <span 
+              onClick={() => {setDetailsPane("Ledgers");setRequestedLedgersGst(gst)}}
+              className={`flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black`}>
+                <FiList className="text-2xl"/>
+                <h2 className="text-xs">All Transactions</h2>
+              </span>
+              <span className="flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black">
+                <FiPlusCircle className="text-2xl"/>
+                <h2 className="text-xs">Add Transaction</h2>
+              </span>
+              
+              <span className="flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black">
+                <FiMail className="text-2xl"/>
+                <h2 className="text-xs">Messages</h2>
+              </span>
+         </div>
+
+         {/* <div className="flex flex-col gap-2 items-center mt-5 px-2">
           <input type="text" placeholder="Search Ledger/Transcationd ID" className="
             text-xs p-2 w-full border-[1px] outline-none border-gray-300
           "/>
-          <CiSearch className="text-xl font-bold"/>
-         </div>
+          <CiSearch className="text-xl font-bold"/> */}
+          <div className="p-3">
+          {detailsPane === "Ledgers" && (
+              <AllTransactions businessgst={requestedLedgersGst}/>
+            )}
+          </div>
+         {/* </div> */}
+
+         
+
+         
+         
            
          
       </section>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Ledger from "./Ledger";
 import { useActiveActionContext } from "../../context/siteContext";
 import { getLedgers } from "../../hooks/userActions/getLedgers";
+import { CiSearch } from "react-icons/ci";
 
 
 const AllTransactions = ({businessgst}: any) => {
@@ -37,14 +38,16 @@ const AllTransactions = ({businessgst}: any) => {
 
   return (
     <>
+    <hr className="block sm:hidden"/>
       {/* Search for a transaction or Ledger */}
-      <section>
+      <section className="flex gap-2 items-center">
         <input
           type="text"
           placeholder="Search for a transaction or Ledger"
-          className="border-2 p-3 text-md my-4 w-full outline-sky-500"
+          className="flex border-2 p-2 text-xs sm:p-3 sm:text-md my-4 w-full outline-sky-500"
           // onFocus={(e) => e.target.placeholder = ""}
         />
+        <CiSearch className="block sm:hidden text-xl font-bold"/>
       </section>
       <section className="overflow-y-scroll max-h-[450px] no-scrollbar select-none">
         {/* All Transactions */}
@@ -52,7 +55,7 @@ const AllTransactions = ({businessgst}: any) => {
         {allMonths2.map((month) => {
           return (
             <div className="py-5" key={month}>
-              <h2 className="text-lg pb-3 font-bold">{month}</h2>
+              <h2 className="sm:text-lg pb-3 font-bold">{month}</h2>
               <div className="flex gap-5 overflow-x-scroll no-scrollbar">
                 {ledgersData.map((ledger) => {
                   if(ledger.receivedBy.gst === businessgst)

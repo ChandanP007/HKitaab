@@ -16,23 +16,23 @@ const Ledger = (ledger: any) => {
   return (
     <>
       <section className="">
-        <div className="flex justify-between p-4 bg-white rounded-md shadow-sm w-[330px]">
+        <div className="flex justify-between p-4 bg-white rounded-md shadow-sm w-[270px] sm:w-[330px]">
           <div>
             <div className="flex justify-between w-[295px]">
-              <h3 className="font-semibold text-xs flex pb-4 ">5 Days ago</h3>
+              <h3 className="font-semibold text-xs flex pb-4 ">{ledger.transactionDetails.date}</h3>
               <RiDeleteBin5Line
                 title="Delete"
-                className="text-black/30 hover:text-black text-xl cursor-pointer"
+                className="hidden sm:flex text-black/30 hover:text-black sm:text-xl cursor-pointer"
               />
             </div>
 
             <div className="flex gap-3">
               <div className="flex flex-col items-center">
-                <VscFilePdf className="w-24 h-24 text-slate-500" />
+                <VscFilePdf className="w-12 h-12 sm:w-24 sm:h-24 text-slate-500" />
                 {/* <Link to="/" className="text-sky-700 hover:underline font-thin text-xs">View</Link> */}
               </div>
               <div>
-                <h2 className="font-semibold text-xl">
+                <h2 className="font-semibold sm:text-xl">
                   {ledger.id.toUpperCase()}
                 </h2>
                 <h3 className="font-thin text-xs text-clip">Transaction Id</h3>
@@ -52,7 +52,7 @@ const Ledger = (ledger: any) => {
                     
                       <p className="flex gap-1">
                         <IoCheckmarkCircle className="text-green-500 text-xl" />
-                        <span className="text-xs text-black/50">
+                        <span className="text-[12px] sm:text-xs text-black/50">
                           Confirmed by you
                         </span>
                       </p>
@@ -67,7 +67,7 @@ const Ledger = (ledger: any) => {
                     ) : (
                       <p className="flex gap-1">
                         <IoCloseCircleOutline className="text-red-500 text-xl" />
-                        <span className="text-xs text-black/50">
+                        <span className="text-[12px] sm:text-xs text-black/50">
                           Not Confirmed yet
                         </span>
                       </p>
@@ -78,7 +78,7 @@ const Ledger = (ledger: any) => {
 
               <div>
                 <button
-                  className="text-xs bg-slate-100 p-2 cursor-pointer hover:bg-slate-200 border-[1px]"
+                  className="hidden sm:block text-xs bg-slate-100 p-1 sm:p-2 cursor-pointer hover:bg-slate-200 border-[1px]"
                   onClick={() => handleOpen(ledger.ledgerPDF)}
                 >
                   Open Ledger
