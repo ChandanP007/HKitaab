@@ -243,7 +243,7 @@ const EmptyCard = () => {
 
             <section className="flex flex-col items-center gap-5">
               <img
-                src={ `https://avatar.iran.liara.run/username?username=${newBusiness.name}` 
+                src={ businessLogo ? businessLogo :  `https://avatar.iran.liara.run/username?username=${newBusiness.name}` 
                 }
                 alt=""
                 className="hidden w-[300px] h-[200px] object-cover"
