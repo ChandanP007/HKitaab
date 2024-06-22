@@ -21,8 +21,15 @@ export const useRegister = async (
         "Content-Type": "multipart/form-data",
         
       },
-    }
+      withCredentials: true
+    },
   );
-  console.log(response.data);
+  // console.log(response.data);
+  if(response.status === 200){
+    alert("Login Success");
+    return {status: 200, msg: "Registration Success"};
+    }else{
+        return {msg: "Some Error Occured"};
+    }
 
 };

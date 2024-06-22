@@ -31,7 +31,10 @@ const BusinessCard = ({gst,title,src,address,email,btype}:CardProps) => {
   
   return (
     <>
-      <div className={`flex sm:flex-col items-center justify-center px-5 sm:px-0 sm:justify-normal border-[1px] sm:border-2 cursor-pointer sm:rounded-lg hover:shadow-md ${bgDrop}`}>
+      <div 
+      onClick={()=>setShowDialog(true)}
+      className={`flex sm:flex-col items-center justify-start px-5 gap-2 sm:gap-0 sm:px-0 sm:justify-normal border-[1px] sm:border-2 cursor-pointer sm:rounded-lg hover:shadow-md  bg-gray-100 ${bgDrop}`}>
+        
         <img src={src} className="rounded-full sm:rounded-none w-12 sm:w-72 h-12 sm:h-40 object-cover"/>
         <div className="p-3 text-sm text-left flex items-center justify-between ">
           <section>
@@ -45,7 +48,7 @@ const BusinessCard = ({gst,title,src,address,email,btype}:CardProps) => {
           </section>
             
         </div>
-          <button className="text-black text-sm p-1  hover:underline" onClick={()=>setShowDialog(true)}>View</button>
+          <button className="hidden sm:flex text-black text-sm p-1  hover:underline" onClick={()=>setShowDialog(true)}>View</button>
       </div>
 
       {/* Details Dialog */}

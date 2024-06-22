@@ -214,7 +214,7 @@ const register = () => {
               </section>
 
               {/* Business Preview */}
-              <section className="flex flex-col sm:w-[250px]">
+              <section className="flex flex-col p-4 sm:w-[250px]">
                 <div className="flex sm:flex-col gap-3">
                   <h1 className="hidden sm:block text-[15px] font-semibold text-black/70 text-center p-3">
                     Preview

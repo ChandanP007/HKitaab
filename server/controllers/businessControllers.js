@@ -120,7 +120,7 @@ export const addBusiness = async(req,res) => {
         //find the thumbnail if the user has selected the suggested business
         const searchGst = businesses.filter(business => business.gst === gstno);
         // console.log(searchGst)
-        const searchGstThumbnail = searchGst.length > 0 ? searchGst[0].thumbnail : 'https://via.placeholder.com/150';
+        const searchGstThumbnail = searchGst.length > 0 ? searchGst[0].thumbnail : `https://avatar.iran.liara.run/username?username=${name}`;
 
         if(business.length > 0){
             return res.status(400).json({

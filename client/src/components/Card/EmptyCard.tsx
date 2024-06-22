@@ -17,7 +17,7 @@ const EmptyCard = () => {
   const [searchSelected, setSearchSelected] = useState<boolean>(false);
   const [businessTitle, setBusinessTitle] = useState<string>("");
 
-  const dheight = searchSelected ? "h-[50vh]" : "h-[70vh]";
+  const dheight = searchSelected ? "sm:h-[50vh]" : "sm:h-[70vh]";
   
 
   const [newBusiness, setNewBusiness] = useState<any>({
@@ -81,7 +81,7 @@ const EmptyCard = () => {
 {/* add business form */}
       <dialog
         open={addBusinessModal}
-        className={`w-[50vw] ${dheight} top-32 border-2 bg-gray-100 detail-modal transition-all z-20`}
+        className={` w-full  sm:w-[50vw] ${dheight} top-24 sm:top-32 border-2 bg-gray-100 detail-modal transition-all z-20`}
       >
         <div className="">
           <div className="flex justify-between border-2 p-4 font-thin">
@@ -145,8 +145,8 @@ const EmptyCard = () => {
           </section>
           <hr></hr>
 
-          <section className="p-3 flex">
-            <form className="flex flex-col gap-3 p-3 w-[65%]">
+          <section className="p-3 flex flex-col-reverse sm:flex-row">
+            <form className="flex flex-col gap-3 p-3 w-full sm:w-[65%]">
               <h3 className="font-thin text-sm">Business details : </h3>
               <input
                 type="text"
@@ -243,13 +243,10 @@ const EmptyCard = () => {
 
             <section className="flex flex-col items-center gap-5">
               <img
-                src={
-                  businessLogo
-                    ? businessLogo
-                    : "https://via.placeholder.com/300"
+                src={ `https://avatar.iran.liara.run/username?username=${newBusiness.name}` 
                 }
                 alt=""
-                className="w-[300px] h-[200px] object-cover"
+                className="hidden w-[300px] h-[200px] object-cover"
               />
               <p className="font-thin">{businessTitle}</p>
             </section>

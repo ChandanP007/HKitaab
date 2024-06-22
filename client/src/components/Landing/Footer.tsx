@@ -10,7 +10,9 @@ const Footer = () => {
               Improve your Productivity. <br></br>Use HisaabKitaab to get your{" "}
               <br/> Clients together.
             </h1>
-            <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:w-[150px] bg-black/70 hover:bg-black transition-all ">
+            <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:w-[150px] bg-black/70 hover:bg-black transition-all "
+              onClick={()=>{window.location.href = "/register"}}
+            >
               Get Started
             </button>
           </section>

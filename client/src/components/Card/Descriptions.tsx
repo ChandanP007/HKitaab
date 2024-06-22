@@ -146,7 +146,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
          
          <hr className="text-black my-3 "/>
 
-  
+          {/* Quick actions  */}
          <h1 className="font-semibold text-sm p-3">Quick actions</h1>
          <div className="flex gap-3 p-3 font-semibold">
               <span 

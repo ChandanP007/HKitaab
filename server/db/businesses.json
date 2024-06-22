@@ -159,5 +159,40 @@
       }
     ],
     "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1715160416/ledgerSite/c7vywgehfykhx9rpuz7n.png"
+  },
+  {
+    "id": "ht4antBnJnxJuU2",
+    "gst": "9812938192",
+    "name": "RK Industries",
+    "type": "buyer",
+    "address": "Jaipur, India",
+    "email": "",
+    "relationships": [
+      {
+        "id": "icQPVCCH9JGfIBM",
+        "name": "Meerut Movers",
+        "gstno": "181083129",
+        "address": "Meerut, India",
+        "businessType": "transporter",
+        "thumbnail": "https://via.placeholder.com/150"
+      },
+      {
+        "id": "DxiQdGRniQ4awCv",
+        "name": "Ankit Gupta",
+        "gstno": "90182381291",
+        "address": "Coimbatore, India",
+        "businessType": "buyer",
+        "thumbnail": "https://via.placeholder.com/150"
+      },
+      {
+        "id": "nlc6gKIePCjQUiQ",
+        "name": "Banerjee's ",
+        "gstno": "1923SLC1221",
+        "address": "Durgapur, India",
+        "businessType": "buyer",
+        "thumbnail": "https://avatar.iran.liara.run/username?username=Banerjee's "
+      }
+    ],
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1719074940/ledgerSite/ixq8cowdkc2kyrjuxrwa.png"
   }
 ]

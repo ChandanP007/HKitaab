@@ -63,6 +63,8 @@ const Branding = () => {
           </div>
         </div>
       </section>
+      <hr className="block sm:hidden border-4"></hr>
+
 
       {/* <hr className="block sm:hidden"></hr> */}
       {/* Features */}
@@ -94,11 +96,11 @@ const Branding = () => {
       {/* Testinomials */}
       <hr className="block sm:hidden border-4"></hr>
       <section className="sm:my-32 h-[75vh] sm:h-[70vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
-        <h1 className="text-3xl sm:text-4xl font-bold text-center py-8 sm:p-12">
+        <h1 className="text-3xl sm:text-4xl font-bold text-center py-10 sm:py-5">
           What Our User Says 
         </h1>
 
-        <section className="flex flex-wrap justify-center w-full overflow-y-scroll p-5 gap-3 sm:gap-24">
+        <section className="flex flex-wrap justify-center w-full overflow-y-scroll gap-3 p-5 sm:gap-20">
           <Review
             user="Nitish Verma"
             content="This tool has revolutionized our accounting processes. The automation feature is a game-changer"

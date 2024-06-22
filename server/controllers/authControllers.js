@@ -15,7 +15,7 @@ export const registerBusiness = async(req,res) => {
         const cloudUrl = await uploadFile(req);
         req.imgUrl = cloudUrl;
 
-
+ 
         //receive business data from the request
         const {gst,name,type,address,email,thumbnail} = JSON.parse(req.body.businessDetails);
         const {user_email,user_password} = JSON.parse(req.body.loginCreds);
