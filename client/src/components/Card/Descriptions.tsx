@@ -38,8 +38,8 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
         <p className="flex gap-3 items-center sm:hidden"> 
           <img src={src} alt="" className="rounded-full h-[50px]"/>
           <div>
-            <h1 className="text-md font-bold">{title}</h1>
-            <h1 className="text-sm font-light">GST : {gst}</h1>
+            <p className="text-md font-bold">{title}</p>
+            <p className="text-sm font-light">GST : {gst}</p>
           </div>
         </p>
       </section>

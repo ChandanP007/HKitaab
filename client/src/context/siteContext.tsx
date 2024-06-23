@@ -1,6 +1,10 @@
 import axios from 'axios';
 import {createContext, useContext, useEffect, useState} from 'react';
 
+//env variables
+const defaultUrl = "http://localhost:3000/api/business";
+const apiUrl = import.meta.env.VITE_APP_API_URI;
+const devEnvironment = import.meta.env.VITE_APP_NODE_ENV;
 
 export const ActiveActionContext = createContext<any>(null);
 
@@ -12,7 +16,7 @@ export const useActiveActionContext = ():any => {
 export const ActiveActionProvider = ({children}:any) => {
 
     //client domain
-    const clientDomain = import.meta.env.VITE_APP_NODE_ENV == 'PRODUCTION' ? import.meta.env.VITE_APP_API_URI : "http://localhost:3000/api/business";
+    const clientDomain = devEnvironment == 'PRODUCTION' ? apiUrl : defaultUrl;
 
     const [Selected, setSelected] = useState<any>({
         buyers: true,
