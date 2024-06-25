@@ -1,13 +1,16 @@
-import { FaSearch } from "react-icons/fa";
+import { FaRegUserCircle, FaSearch } from "react-icons/fa";
 import { useState } from "react";
 // import Select from 'react-select'
 
 import { useActiveActionContext } from "../../context/siteContext";
 import { generateDp } from "../../utils/dpGenerator";
-import { IoMdClose } from "react-icons/io";
+import { IoMdClose, IoMdHome } from "react-icons/io";
 import { useLogout } from "../../hooks/userAuth/useLogout";
 import { searchBusiness } from "../../hooks/userActions/searchBusiness";
 import { CiLogout } from "react-icons/ci";
+import { GrHomeRounded } from "react-icons/gr";
+import { IoAdd, IoMan } from "react-icons/io5";
+import EmptyCard from "../Card/EmptyCard";
 
 const Header = (loggedUser: any) => {
   //states
@@ -155,17 +158,30 @@ const Header = (loggedUser: any) => {
 
         {/* Mobile View */}
         <header className="flex sticky w-full top-0 z-10 justify-between shadow-lg items-center sm:hidden p-5 bg-black text-white">
-        <div
+              <div
               className="flex gap-2 items-center cursor-pointer"
               onClick={() => (window.location.href = "/me/profile")}
-            >
+              >
               <img src={dp} className="w-12 h-12 rounded-full text-white" />
               <h1 className="font-thin flex flex-col">
                 Welcome,<span className="font-semibold"> {username}</span>
               </h1>
-            </div>
-            <CiLogout className="text-3xl text-white" onClick={() => useLogout(clientDomain)}/>
+              </div>
+              <CiLogout className="text-3xl text-white" onClick={() => useLogout(clientDomain)}/>
         </header>
+
+{/* Action Buttons  */}
+        {/* <header className="p-2 flex justify-around bg-gray-200">
+              <div className="flex flex-col justify-center items-center">
+                <EmptyCard/>
+              </div>
+              <div className="flex flex-col justify-center items-center">
+                <FaRegUserCircle className="text-3xl"/>
+                <p className="text-xs font-semibold">Profile</p>
+              </div>
+        </header> */}
+
+        
               
       </main>
     </>

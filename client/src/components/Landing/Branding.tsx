@@ -95,7 +95,7 @@ const Branding = () => {
 
       {/* Testinomials */}
       <hr className="block sm:hidden border-4"></hr>
-      <section className="sm:my-32 h-[75vh] sm:h-[70vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
+      <section className="sm:my-32 h-[75vh] sm:h-[60vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
         <h1 className="text-3xl sm:text-4xl font-bold text-center py-10 sm:py-5">
           What Our User Says 
         </h1>

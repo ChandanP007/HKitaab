@@ -21,18 +21,18 @@ const Home = () => {
         :
         
         <>
+        <Suspense fallback={<Loader/>}>
         <Header loggedUser={user.user}/>
-        <main className={`w-full flex flex-col justify-center items-center`}>
+        <main className={`w-full flex flex-col justify-center items-center min-h-[80vh]`}>
           <div className="mt-10">
             <ActionBar/>
-            <Suspense fallback={<Loader/>}>
-              <div className="container flex justify-center w-full p-5 min-h-[100vh]">
+              <div className="flex justify-center w-full p-5 sm:mb-14">
                 <Businesses/>
               </div>
-            </Suspense>
           </div>
         </main>
         <Footer/>
+        </Suspense>
         </>
       }
 

@@ -5,7 +5,7 @@ import {
 import { FcAddDatabase } from "react-icons/fc";
 import { useState } from "react";
 import AllTransactions from "./AllTransactions";
-import MyDashboard from "./MyDashboard";
+import AddTransaction from "./AddTransaction";
 import { IoStatsChartOutline } from "react-icons/io5";
 // import { CiCirclePlus, CiSearch } from "react-icons/ci";
 import { FiList, FiMail, FiPlusCircle } from "react-icons/fi";
@@ -114,7 +114,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
               <AllTransactions businessgst={requestedLedgersGst}/>
             )}
             {detailsPane === "MyDashboard" && (
-              <MyDashboard gst={gst} btype={btype}/>
+              <AddTransaction gst={gst} btype={btype}/>
             )}
             {detailsPane === "History" && (
               <div>
@@ -155,7 +155,9 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
                 <FiList className="text-2xl"/>
                 <h2 className="text-xs">All Transactions</h2>
               </span>
-              <span className="flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black">
+              <span 
+              onClick={() => {setDetailsPane("AddTransaction")}}
+              className="flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black">
                 <FiPlusCircle className="text-2xl"/>
                 <h2 className="text-xs">Add Transaction</h2>
               </span>
@@ -174,6 +176,11 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
           <div className="p-3">
           {detailsPane === "Ledgers" && (
               <AllTransactions businessgst={requestedLedgersGst}/>
+            )}
+          </div>
+          <div className="p-3">
+          {detailsPane === "AddTransaction" && (
+              <AddTransaction gst={gst} btype={btype}/>
             )}
           </div>
          {/* </div> */}
