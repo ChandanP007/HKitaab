@@ -1,7 +1,5 @@
 // import React from 'react'
 
-import { FaFile, FaPlusCircle } from "react-icons/fa";
-import { FaMessage } from "react-icons/fa6";
 import { Suspense, useState } from "react";
 import { addTransaction } from "../../hooks/userActions/addTransaction";
 import { useActiveActionContext } from "../../context/siteContext";
@@ -23,11 +21,11 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
     addtransaction: "flex",
     pdfview: "hidden",
   });
-  const [buttonTexture, setButtonTexture] = useState<any>({
-    addtransaction: "",
-    sendMessage: "",
-    generateReports: "",
-  });
+  // const [buttonTexture, setButtonTexture] = useState<any>({
+  //   addtransaction: "",
+  //   sendMessage: "",
+  //   generateReports: "",
+  // });
   const [transaction, setTransaction] = useState<any>({
     particulars: "",
     id: generateId(10).toUpperCase(),

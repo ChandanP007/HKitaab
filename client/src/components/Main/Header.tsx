@@ -1,16 +1,14 @@
-import { FaRegUserCircle, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 // import Select from 'react-select'
 
 import { useActiveActionContext } from "../../context/siteContext";
 import { generateDp } from "../../utils/dpGenerator";
-import { IoMdClose, IoMdHome } from "react-icons/io";
+import { IoMdClose } from "react-icons/io";
 import { useLogout } from "../../hooks/userAuth/useLogout";
 import { searchBusiness } from "../../hooks/userActions/searchBusiness";
 import { CiLogout } from "react-icons/ci";
-import { GrHomeRounded } from "react-icons/gr";
-import { IoAdd, IoMan } from "react-icons/io5";
-import EmptyCard from "../Card/EmptyCard";
+
 
 const Header = (loggedUser: any) => {
   //states
