@@ -20,7 +20,7 @@ const MyProfile = () => {
         </header>
 
         {/* Profile Details */}
-        <section className="px-5 pt-10 sm:text-xl font-semibold sm:px-[20rem] sm:pt-[6rem] flex flex-col gap-12">
+        <section className="px-5 pt-10 sm:text-xl font-semibold sm:px-[20rem] sm:pt-[14rem] flex flex-col gap-12">
             <div>
                 <h1 className="text-3xl sm:text-5xl font-thin">{user.user.name}</h1>
             </div>

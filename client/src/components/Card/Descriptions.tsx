@@ -68,7 +68,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
               </li> */}
             </ul>
             <div className="p-5">
-                <h2 className="text-xl">Quick Actions</h2>
+                {/* <h2 className="text-xl">Quick Actions</h2> */}
             </div>
           </div>
         </div>
@@ -89,7 +89,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
               onClick={() => setDetailsPane("MyDashboard")}
             >
               <FcAddDatabase className="text-xl" />
-              My Dashboard
+              New Transaction
             </button>
             <button
               className="flex justify-center items-center gap-1 hover:text-black"
@@ -147,7 +147,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
          <hr className="text-black my-3 "/>
 
           {/* Quick actions  */}
-         <h1 className="font-semibold text-sm p-3">Quick actions</h1>
+         {/* <h1 className="font-semibold text-sm p-3">Quick actions</h1> */}
          <div className="flex gap-3 p-3 font-semibold">
               <span 
               onClick={() => {setDetailsPane("Ledgers");setRequestedLedgersGst(gst)}}

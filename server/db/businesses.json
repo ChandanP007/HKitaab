@@ -75,6 +75,14 @@
         "address": "Delhi, IN",
         "businessType": "buyer",
         "thumbnail": ""
+      },
+      {
+        "id": "di9v0nJkovJhFm5",
+        "name": "RK Industries",
+        "gstno": "9812938192",
+        "address": "Jaipur, India",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1719074940/ledgerSite/ixq8cowdkc2kyrjuxrwa.png"
       }
     ],
     "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713799091/ledgerSite/ixnyjxezya8rskt2fb1a.png"
@@ -191,6 +199,14 @@
         "address": "Durgapur, India",
         "businessType": "buyer",
         "thumbnail": "https://avatar.iran.liara.run/username?username=Banerjee's "
+      },
+      {
+        "id": "AZwNPf5ejzi9q6I",
+        "name": "Test Account",
+        "gstno": "9823490830",
+        "address": "Somewhere, Earth",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713799091/ledgerSite/ixnyjxezya8rskt2fb1a.png"
       }
     ],
     "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1719074940/ledgerSite/ixq8cowdkc2kyrjuxrwa.png"

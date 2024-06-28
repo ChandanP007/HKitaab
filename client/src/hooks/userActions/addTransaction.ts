@@ -22,5 +22,8 @@ export const addTransaction = async (
   console.log(response);
   if(response.status === 200){
     alert("Transaction added successfully");
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
-};
+}

@@ -26,15 +26,18 @@ export const addTransaction = async (req, res) => {
     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
     const ledgers = JSON.parse(allLedgers);
     let transactionDetails = JSON.parse(transaction);
+    const transactionId = transactionDetails.id;
+    const {id,gst,name,type} = JSON.parse(userDetails);
+    const uploader = {id,gst,name,type};
 
     //get the month from the transaction
     const month = new Date(transactionDetails.date).getMonth() + 1;
     const convertedMonth = months[month];
 
     const newTransaction = {
-      id: generateId(15),
+      id: transactionId,
       transactionDetails,
-      uploadedBy: JSON.parse(userDetails),
+      uploadedBy: uploader,
       receivedBy: JSON.parse(receiver),
       ledgerPDF,
       confirmations: {
