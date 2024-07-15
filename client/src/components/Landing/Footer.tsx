@@ -6,17 +6,17 @@ const Footer = () => {
         {/* Top */}
         <section className="my-10 sm:my-32 px-5 flex justify-around items-center">
           <section>
-            <h1 className="text-3xl sm:text-5xl font-bold ">
+            <h1 className="text-3xl sm:text-5xl font-bold " data-aos="fade-right">
               Improve your Productivity. <br></br>Use HisaabKitaab to get your{" "}
               <br/> Clients together.
             </h1>
             <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:w-[150px] bg-black/70 hover:bg-black transition-all "
-              onClick={()=>{window.location.href = "/register"}}
+              onClick={()=>{window.location.href = "/register"}} data-aos="fade-up"
             >
               Get Started
             </button>
           </section>
-          <section className="hidden sm:flex flex-col gap-3">
+          <section className="hidden sm:flex flex-col gap-3" data-aos="fade-down">
            <img 
            className="h-[600px] w-[800px]"
            src="https://img.freepik.com/free-vector/businessman-working-table-flying-like-superhero_74855-20015.jpg?t=st=1716628818~exp=1716632418~hmac=3cfa695979087cfe3356bf03e6daea3ef4a1aeb14a5f6d22189de22c932396c3&w=1380" alt="" />

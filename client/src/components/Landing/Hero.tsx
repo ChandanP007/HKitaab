@@ -1,12 +1,24 @@
 import Typewriter from "typewriter-effect";
+import AOS from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 
 const Hero = () => {
+
+  useEffect(() => {
+    AOS.init();
+  }
+  , []);
+
+
   return (
+    
     <>
     
     {/* Desktop View  */}
-    <main className="hidden sm:block p-12">
-      <nav className="flex items-center justify-center mb-16">
+    <main className="hidden sm:block p-12 ">
+      <nav className="flex items-center justify-center mb-16" data-aos="fade">
         <h1 className="font-bold text-2xl">HisaabKitaab</h1>
         <ul className="flex items-center gap-10 ml-auto">
           <li className="hover:underline cursor-pointer font-semibold">
@@ -32,8 +44,8 @@ const Hero = () => {
         </ul>
       </nav>
 
-      <section className="flex justify-around gap-28 items-center">
-        <section className="mt-20">
+      <section className="flex justify-around gap-28 items-center"  >
+        <section className="mt-20" data-aos="fade-right">
           <h1 className="text-[3rem] w-[750px]">
             Effortlessly Manage Your Ledgers and Streamline Business Operations
           </h1>
@@ -67,12 +79,13 @@ const Hero = () => {
             font-semibold
             "
             onClick={() => (window.location.href = "/register")}
+
           >
             Get Started
           </button>
         </section>
 
-        <aside>
+        <aside data-aos="fade-up">
           <img
             className="rounded-3xl shadow-2xl w-[800px] h-[500px] "
             src="https://res.cloudinary.com/dkzo1creb/image/upload/fl_preserve_transparency/v1716628001/transactionsss_usx9g9.jpg?_s=public-apps"

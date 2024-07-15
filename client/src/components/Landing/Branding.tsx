@@ -8,12 +8,12 @@ const Branding = () => {
     <main>
       <hr className="block sm:hidden border-4"></hr>
       {/* Why choose HisaabKitaab ?  */}
-      <section className="mb-24 sm:my-20 flex flex-col items-center sm:bg-gray-100 p-5">
+      <section className="mb-24 sm:my-20 flex flex-col items-center sm:bg-gray-100 p-5 h-[70vh]">
         <h1 className="text-3xl my-5 sm:text-4xl font-bold text-center sm:p-12">
           Why choose HisaabKitaab?
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 gap-y-10 sm:gap-32 mt-5 w-[100vw]">
-          <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0">
+        <div className="flex flex-wrap justify-center gap-4 gap-y-10 sm:gap-32 mt-5 w-[100vw]" >
+          <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0" data-aos="fade">
             <MdOutlineAccountTree className="text-7xl sm:text-9xl text-center" />
             <h2
               className="
@@ -30,7 +30,7 @@ const Branding = () => {
               Automatic Ledger Management
             </p>
           </div>
-          <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0">
+          <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0" data-aos="fade">
             <MdQueryStats className="text-7xl sm:text-9xl text-center" />
             <h2 className="text-2xl hidden sm:block
              bg-black text-white p-2 w-[49px] text-center rounded-full">
@@ -41,7 +41,7 @@ const Branding = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-5 justify-center items-center p-1 sm:border-none sm:p-0">
+          <div className="flex flex-col gap-5 justify-center items-center p-1 sm:border-none sm:p-0" data-aos="fade">
             <GoShieldCheck className="text-7xl sm:text-9xl text-center" />
             <h2 className="text-2xl bg-black
             hidden sm:block text-white p-2 w-[49px] text-center rounded-full">
@@ -51,7 +51,7 @@ const Branding = () => {
               Secure and Reliable
             </p>
           </div>
-          <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0">
+          <div className="flex flex-col gap-5 justify-center items-center  p-1 sm:border-none sm:p-0" data-aos="fade">
             <PiNewspaperLight className="text-7xl sm:text-9xl text-center" />
             <h2 className="text-2xl bg-black
             hidden sm:block text-white p-2 w-[49px] text-center rounded-full">
@@ -70,7 +70,7 @@ const Branding = () => {
       {/* Features */}
       <section className="sm:flex sm:m-32 justify-around items-center">
         <section>
-          <h1 className="text-4xl p-2 mt-10 sm:p-0 sm:mt-0 sm:text-5xl font-bold  ">
+          <h1 className="text-4xl p-2 mt-10 sm:p-0 sm:mt-0 sm:text-5xl font-bold  " data-aos="fade-right">
             Empower <br></br>Your Business <br></br> with{" "}
             <br className="hidden sm:block"></br>Cutting-Edge Technology
           </h1>
@@ -80,7 +80,7 @@ const Branding = () => {
           src="https://res.cloudinary.com/dkzo1creb/image/upload/fl_preserve_transparency/v1716628001/transactionsss_usx9g9.jpg?_s=public-apps"
           alt="hero-image"
         />
-        <section className="flex items-center flex-col gap-3 py-10 mb-10 sm:mb-0 sm:py-0 text-sm sm:text-md">
+        <section className="flex items-center flex-col gap-3 py-10 mb-10 sm:mb-0 sm:py-0 text-sm sm:text-md" data-aos="fade-up">
           <h2 className="bg-gray-300 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-black rounded-xl shadow-lg">
             Automate routine tasks and focus on growing your business
           </h2>
@@ -95,12 +95,12 @@ const Branding = () => {
 
       {/* Testinomials */}
       <hr className="block sm:hidden border-4"></hr>
-      <section className="sm:my-32 h-[75vh] sm:h-[60vh] flex flex-col justify-around items-center  bg-gray-100 w-full">
+      <section className="sm:my-32 h-[75vh] sm:h-[70vh] flex flex-col justify-evenly items-center  bg-gray-100 w-full">
         <h1 className="text-3xl sm:text-4xl font-bold text-center py-10 sm:py-5">
           What Our User Says 
         </h1>
 
-        <section className="flex flex-wrap justify-center w-full overflow-y-scroll gap-3 p-5 sm:gap-20">
+        <section className="flex flex-wrap justify-center w-full overflow-y-scroll gap-3 p-5 sm:gap-20" data-aos="fade-down">
           <Review
             user="Nitish Verma"
             content="This tool has revolutionized our accounting processes. The automation feature is a game-changer"
