@@ -35,7 +35,7 @@ const Hero = () => {
                   <a>Register</a></li> */}
           <li className="hover:underline cursor-pointer font-semibold">
             <button
-              className="bg-black/70 text-white p-2 text-sm w-[100px] rounded-full hover:bg-black"
+              className="bg-black text-white p-2 text-sm w-[100px] rounded-full hover:bg-black"
               onClick={() => (window.location.href = "/login")}
             >
               Sign In
@@ -44,9 +44,9 @@ const Hero = () => {
         </ul>
       </nav>
 
-      <section className="flex justify-around gap-28 items-center"  >
+      <section className="flex justify-around gap-28 xl:max-2xl:gap-0 items-center xl:max-2xl:justify-around"  >
         <section className="mt-20" data-aos="fade-right">
-          <h1 className="text-[3rem] w-[750px]">
+          <h1 className="text-[3.2rem] font-semibold w-[750px] xl:max-2xl:w-[650px]">
             Effortlessly Manage Your Ledgers and Streamline Business Operations
           </h1>
           <div className="my-10 text-black/50 text-xl">
@@ -68,14 +68,14 @@ const Hero = () => {
           </div>
           <button
             className="
-            bg-black/70 border-2 text-white 
+            bg-black border-2 text-white 
             transition-all duration-300
             hover:w-[160px]
             hover:bg-black
             hover:text-white 
             p-4 w-[130px]
             text-sm rounded-full 
-            mt-10 ml-10
+            mt-10 ml-5
             font-semibold
             "
             onClick={() => (window.location.href = "/register")}
@@ -87,7 +87,7 @@ const Hero = () => {
 
         <aside data-aos="fade-up">
           <img
-            className="rounded-3xl shadow-2xl w-[800px] h-[500px] "
+            className="rounded-3xl shadow-2xl w-[800px] h-[500px] xl:max-2xl:w-[600px] xl:max-2xl:h-[400px] "
             src="https://res.cloudinary.com/dkzo1creb/image/upload/fl_preserve_transparency/v1716628001/transactionsss_usx9g9.jpg?_s=public-apps"
             alt="hero-image"
           />

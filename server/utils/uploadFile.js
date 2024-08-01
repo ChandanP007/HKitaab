@@ -22,7 +22,7 @@ export const uploadPDF = async(req,res) => {
        const dbx = new Dropbox({ accessToken: process.env.DROPBOX_ACCESS_TOKEN });
 
        const uploadDbx = await dbx.filesUpload({
-           path: '/ledgers/' + req.file.originalname,
+           path: '/HisaabKitaab24' + req.file.originalname,
            contents: req.file.buffer,
               mode: {
                 ".tag": "overwrite"
@@ -33,12 +33,6 @@ export const uploadPDF = async(req,res) => {
             path: uploadDbx.result.path_display
         });
        
-        // res.json({
-        //     message: 'File uploaded successfully',
-        //     // data: uploadDbx.result,
-        //     link: sharedLink.result.url
-        // }).status(200);
-
         return sharedLink.result.url;
     }
     catch(err){

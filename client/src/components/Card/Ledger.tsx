@@ -16,7 +16,7 @@ const Ledger = (ledger: any) => {
   return (
     <>
       <section className="">
-        <div className="flex justify-between p-4 bg-white rounded-md shadow-sm w-[270px] sm:w-[330px]">
+        <div className="flex justify-between p-3 bg-white rounded-md shadow-sm w-[270px] sm:w-[330px]">
           <div>
             <div className="flex justify-between w-[295px]">
               <h3 className="font-semibold text-xs flex pb-4 ">{ledger.transactionDetails.date}</h3>
@@ -35,8 +35,7 @@ const Ledger = (ledger: any) => {
                 <h2 className="font-semibold sm:text-xl">
                   {ledger.id.toUpperCase()}
                 </h2>
-                <h3 className="font-thin text-xs text-clip">Transaction Id</h3>
-                {/* <h3 className="font-thin text-[10px] mt-5">Transaction Date : 12/12/22</h3> */}
+                <h3 className="font-thin text-[10px] mt-2">{ledger.transactionDetails.particulars.slice(0,15)}..</h3>
               </div>
             </div>
 
@@ -81,7 +80,7 @@ const Ledger = (ledger: any) => {
                   className="hidden sm:block text-xs bg-slate-100 p-1 sm:p-2 cursor-pointer hover:bg-slate-200 border-[1px]"
                   onClick={() => handleOpen(ledger.ledgerPDF)}
                 >
-                  Open Ledger
+                  View Ledger
                 </button>
               </div>
             </div>

@@ -4,13 +4,13 @@ const Footer = () => {
       <footer>
         <hr className="block sm:hidden border-4"></hr>
         {/* Top */}
-        <section className="my-10 sm:my-32 px-5 flex justify-around items-center">
+        <section className="my-10 sm:my-32 p-5 flex justify-evenly items-center">
           <section>
-            <h1 className="text-3xl sm:text-5xl font-bold " data-aos="fade-right">
+            <h1 className="text-3xl sm:text-5xl tracking-wide font-bold xl:max-2xl:px-[40px]" data-aos="fade-right">
               Improve your Productivity. <br></br>Use HisaabKitaab to get your{" "}
               <br/> Clients together.
             </h1>
-            <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:w-[150px] bg-black/70 hover:bg-black transition-all "
+            <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:mt-14 sm:w-[150px] xl:max-2xl:mx-[40px] bg-black/70 hover:bg-black transition-all "
               onClick={()=>{window.location.href = "/register"}} data-aos="fade-up"
             >
               Get Started

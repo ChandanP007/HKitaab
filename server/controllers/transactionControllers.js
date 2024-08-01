@@ -1,5 +1,4 @@
 import fs from "fs";
-import { generateId } from "../utils/generateId.js";
 import { uploadPDF } from "../utils/uploadFile.js";
 
 // Transaction and Ledgers management
@@ -64,20 +63,52 @@ export const addTransaction = async (req, res) => {
     });
   }
 };
+// export const getLedgers = async (req, res) => {
+//   try {
+//     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
+//     const ledgers = JSON.parse(allLedgers);
+//     const user = req.user.userId;
+
+//     //send only those ledgers that the user is involved in
+//     const userLedgers = ledgers.filter(
+//       (ledger) => 
+//       ledger.uploadedBy.id === user ||
+//       ledger.receivedBy.id === user
+//     );
+
+//     res.json({
+//       status: "success",
+//       data: userLedgers,
+      
+//     });
+//   } catch (err) {
+//     res.status(500).json({
+//       status: "error",
+//       message: err.message,
+//     });
+//   }
+// };
+
+
 export const getLedgers = async (req, res) => {
   try {
     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
     const ledgers = JSON.parse(allLedgers);
     const user = req.user.userId;
+    const {businessId} = req.body;
 
     //send only those ledgers that the user is involved in
     const userLedgers = ledgers.filter(
-      (ledger) => ledger.uploadedBy.id === user
+      (ledger) => 
+      ledger.uploadedBy.id === user
     );
 
     res.json({
       status: "success",
       data: userLedgers,
+      user,
+      businessId
+
     });
   } catch (err) {
     res.status(500).json({
@@ -85,4 +116,29 @@ export const getLedgers = async (req, res) => {
       message: err.message,
     });
   }
-};
+}
+
+export const deleteTransaction = async (req, res) => {
+  try {
+    const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
+    const ledgers = JSON.parse(allLedgers);
+    const { transactionId } = req.body;
+
+    const newLedgers = ledgers.filter(
+      (ledger) => ledger.transactionDetails.id !== transactionId
+    );
+
+    fs.writeFileSync("./db/ledgers.json", JSON.stringify(newLedgers));
+
+    res.json({
+      status: "success",
+      message: "Transaction deleted successfully",
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "error",
+      message: err.message,
+    });
+  }
+}
+

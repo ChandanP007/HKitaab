@@ -35,13 +35,13 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
           Organisation Name :{" "}
           <span className="text-xl font-semibold">{title}</span>
         </h1>
-        <p className="flex gap-3 items-center sm:hidden"> 
+        <span className="flex gap-3 items-center sm:hidden"> 
           <img src={src} alt="" className="rounded-full h-[50px]"/>
           <div>
             <p className="text-md font-bold">{title}</p>
             <p className="text-sm font-light">GST : {gst}</p>
           </div>
-        </p>
+        </span>
       </section>
 
 {/* Main Body */}

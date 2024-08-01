@@ -8,7 +8,7 @@ type ReviewPropsType ={
 
 const Review = ({user,content,designation,userimg}:ReviewPropsType) => {
   return (
-    <div className="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-md border-[1px] px-5 sm:p-7">
+    <div className="relative flex w-full  max-w-[26rem] flex-col rounded-xl bg-white/80 bg-clip-border text-gray-700 shadow-md border-[1px] px-5 sm:p-7">
     <div className="relative mx-0 mt-4 flex items-center gap-4 overflow-hidden rounded-xl bg-transparent bg-clip-border pt-0 pb-8 text-gray-700 shadow-none">
       <img
         src={userimg}        

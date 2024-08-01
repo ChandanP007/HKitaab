@@ -83,6 +83,14 @@
         "address": "Jaipur, India",
         "businessType": "buyer",
         "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1719074940/ledgerSite/ixq8cowdkc2kyrjuxrwa.png"
+      },
+      {
+        "id": "faabeBMmELX7iFG",
+        "name": "Admin Account",
+        "gstno": "90123902193",
+        "address": "India",
+        "businessType": "buyer",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713463008/ledgerSite/lk85uzjsoma4tcfvidez.jpg"
       }
     ],
     "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713799091/ledgerSite/ixnyjxezya8rskt2fb1a.png"
@@ -210,5 +218,24 @@
       }
     ],
     "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1719074940/ledgerSite/ixq8cowdkc2kyrjuxrwa.png"
+  },
+  {
+    "id": "9l9XxPt0TN2ea1D",
+    "gst": "981928391",
+    "name": "Test 3",
+    "type": "agent",
+    "address": "India",
+    "email": "",
+    "relationships": [
+      {
+        "id": "nyZ7PYadfgxm9fR",
+        "name": "Test 2",
+        "gstno": "45645456",
+        "address": "Kolkata, India",
+        "businessType": "seller",
+        "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1713890161/ledgerSite/vrirrhl7qkqhq8kmtu7m.png"
+      }
+    ],
+    "thumbnail": "https://res.cloudinary.com/dkzo1creb/image/upload/v1722506133/ledgerSite/sbqfnt4mip7x80utd90f.jpg"
   }
 ]

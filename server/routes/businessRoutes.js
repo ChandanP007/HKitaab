@@ -35,6 +35,7 @@ router.post("/me/addBusiness", protect, addBusiness);
 router.get("/me/search/:search", searchBusiness);
 router.post("/me/addTransaction", singleUpload, addTransaction);
 router.get("/me/ledgers", protect, getLedgers);
+// router.post("/me/allledgers", protect, getLedgers2);
 
 router.get("/me/buyers", protect, getMyBuyers);
 router.get("/me/sellers", protect, getMySellers);
