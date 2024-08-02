@@ -20,10 +20,11 @@ export const addTransaction = async (
     {withCredentials: true,}
     )
   console.log(response);
+
   if(response.status === 200){
     alert("Transaction added successfully");
     setTimeout(() => {
-      // window.location.reload();
+      window.location.reload();
     }, 1000);
   }
 }

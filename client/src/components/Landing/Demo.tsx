@@ -19,7 +19,7 @@ export default function Demo() {
 
   //auto scroll
   useEffect(() => {
-    const intervalId = setInterval(nextImage, 3000);
+    const intervalId = setInterval(nextImage, 4500);
     return () => clearInterval(intervalId);
   }, []);
 

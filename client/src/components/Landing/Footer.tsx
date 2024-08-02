@@ -19,7 +19,7 @@ const Footer = () => {
           <section className="hidden sm:flex flex-col gap-3" data-aos="fade-down">
            <img 
            className="h-[600px] w-[800px]"
-           src="https://img.freepik.com/free-vector/businessman-working-table-flying-like-superhero_74855-20015.jpg?t=st=1716628818~exp=1716632418~hmac=3cfa695979087cfe3356bf03e6daea3ef4a1aeb14a5f6d22189de22c932396c3&w=1380" alt="" />
+           src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg?t=st=1722617368~exp=1722620968~hmac=d150562b430fd47d7ae401be5814c755af88a856f0727621a90b5e23ab9e7ad0&w=996" alt="" />
           </section>
         </section>
         

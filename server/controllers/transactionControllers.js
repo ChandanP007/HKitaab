@@ -19,25 +19,32 @@ export const addTransaction = async (req, res) => {
       12: "December",
     };
 
-    const ledgerPDF = await uploadPDF(req, res);
     const { transaction, userDetails, receiver } = req.body;
-
-    const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
-    const ledgers = JSON.parse(allLedgers);
     let transactionDetails = JSON.parse(transaction);
     const transactionId = transactionDetails.id;
     const {id,gst,name,type} = JSON.parse(userDetails);
+
+    const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
+    const ledgers = JSON.parse(allLedgers);
+    
+    //upload the ledger pdf to s3 bucket
+    const ledgerPDF = await uploadPDF(req,res,gst);
+
     const uploader = {id,gst,name,type};
+    let receivedBy = JSON.parse(receiver)
+    receivedBy = {...receivedBy,id}
 
     //get the month from the transaction
     const month = new Date(transactionDetails.date).getMonth() + 1;
     const convertedMonth = months[month];
 
+
     const newTransaction = {
       id: transactionId,
+      timestamp : new Date().toISOString(),
       transactionDetails,
       uploadedBy: uploader,
-      receivedBy: JSON.parse(receiver),
+      receivedBy,
       ledgerPDF,
       confirmations: {
         sender: "success",
@@ -45,6 +52,7 @@ export const addTransaction = async (req, res) => {
       },
       month: convertedMonth,
     };
+
     ledgers.push(newTransaction);
     fs.writeFileSync("./db/ledgers.json", JSON.stringify(ledgers));
 
@@ -56,6 +64,7 @@ export const addTransaction = async (req, res) => {
         },
       })
       .status(200);
+
   } catch (err) {
     res.status(500).json({
       status: "error",
@@ -63,52 +72,31 @@ export const addTransaction = async (req, res) => {
     });
   }
 };
-// export const getLedgers = async (req, res) => {
-//   try {
-//     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
-//     const ledgers = JSON.parse(allLedgers);
-//     const user = req.user.userId;
-
-//     //send only those ledgers that the user is involved in
-//     const userLedgers = ledgers.filter(
-//       (ledger) => 
-//       ledger.uploadedBy.id === user ||
-//       ledger.receivedBy.id === user
-//     );
-
-//     res.json({
-//       status: "success",
-//       data: userLedgers,
-      
-//     });
-//   } catch (err) {
-//     res.status(500).json({
-//       status: "error",
-//       message: err.message,
-//     });
-//   }
-// };
-
 
 export const getLedgers = async (req, res) => {
   try {
+    const user = req.user.userId;
+
+    //fetching all the ledgers
     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
     const ledgers = JSON.parse(allLedgers);
-    const user = req.user.userId;
-    const {businessId} = req.body;
+
+    //find the request user's gst 
+    const businesses = fs.readFileSync("./db/businesses.json", "utf-8");
+    const allBusinesses = JSON.parse(businesses);
+    const requestMaker = allBusinesses.filter((business) => business.id === user)
+    const callerGST = requestMaker[0].gst;
 
     //send only those ledgers that the user is involved in
     const userLedgers = ledgers.filter(
       (ledger) => 
-      ledger.uploadedBy.id === user
+      ledger.uploadedBy.gst === callerGST || ledger.receivedBy.gst === callerGST
     );
 
     res.json({
       status: "success",
       data: userLedgers,
-      user,
-      businessId
-
+      requester : requestMaker
     });
   } catch (err) {
     res.status(500).json({

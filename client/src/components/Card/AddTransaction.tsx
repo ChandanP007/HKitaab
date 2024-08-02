@@ -1,4 +1,3 @@
-// import React from 'react'
 
 import { Suspense, useState } from "react";
 import { addTransaction } from "../../hooks/userActions/addTransaction";
@@ -15,17 +14,13 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
 
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [pdf, setPdf] = useState<any>("");
+  const [submission, setSubmission] = useState<boolean>(false);
 
   //values
   const [visibility, setVisibility] = useState<any>({
     addtransaction: "flex",
     pdfview: "hidden",
   });
-  // const [buttonTexture, setButtonTexture] = useState<any>({
-  //   addtransaction: "",
-  //   sendMessage: "",
-  //   generateReports: "",
-  // });
   const [transaction, setTransaction] = useState<any>({
     particulars: "",
     id: generateId(10).toUpperCase(),
@@ -62,8 +57,7 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
       alert("Please fill all the fields and upload the pdf file");
       return;
     }
-    // console.log(transaction);
-
+    setSubmission(true);
     addTransaction(transaction, pdf, clientDomain, user.user, receiver);
     
   };
@@ -161,7 +155,8 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
         </div>
 
         {/* Document Preview before upload */}
-        <Suspense fallback={<h1 className="text-3xl">Uploading...</h1>}>
+        {
+          !submission ? (
           <div className={`hidden sm:flex w-[40vw] border-2 ${visibility.pdfview} `}>
             {/* <h3 className="text-xl flex justify-center p-2 text-white bg-black">
               Ledger Preview{" "}
@@ -174,7 +169,38 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
 
             />
           </div>
-        </Suspense>
+          ) : 
+          <>
+            {/* progress spinner  */}
+            <div className="flex mt-[20%] ml-[10vw] flex-col justify-center items-center w-full h-full ">
+              {/* simple spinner */}
+              <svg
+                className="animate-spin h-12 w-12 text-green-700"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              > 
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-100"
+                  fill="currentColor"
+                  d="M4 12a8 8 8 018-8V0c-4.418 0-11 3.582-8 8z"
+                ></path>  
+              </svg>
+
+              <h2 className="text-md font-semibold mt-3">Transaction in Process</h2>
+            </div>
+          </>
+        }
+        
+        
       </main>
     </>
   );
