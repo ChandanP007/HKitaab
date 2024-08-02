@@ -9,13 +9,10 @@ export default function Demo() {
   ];
 
   const [currentImage, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
   const nextImage = () => {
     setCurrent((prev) => (prev + 1) % images.length);
   };
-  const prevImage = () => {
-    setCurrent((prev) => (prev - 1 + images.length) % images.length);
-  };
+ 
 
   //auto scroll
   useEffect(() => {

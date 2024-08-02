@@ -9,7 +9,6 @@ const AllTransactions = ({businessgst}: any) => {
 
   //states
   const { clientDomain } = useActiveActionContext();
-  const [allMonths, setAllMonths] = useState<string[]>([]);
   const [ledgersData, setAllLedgersData] = useState<any[]>([]);
   
   useEffect(() => {
