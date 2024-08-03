@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { addTransaction } from "../../hooks/userActions/addTransaction";
 import { useActiveActionContext } from "../../context/siteContext";
 import { generateId } from "../../utils/generateId";
