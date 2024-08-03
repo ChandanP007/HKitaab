@@ -10,7 +10,7 @@ const Branding = () => {
     <main>
       <hr className="block sm:hidden border-4"></hr>
       {/* Why choose HisaabKitaab ?  */}
-      <section className="mb-24 sm:mb-0 flex flex-col justify-center items-center sm:bg-gray-200 h-[65vh] xl:max-2xl:h-[70vh]">
+      <section className="mb-24 sm:mb-0 flex flex-col justify-center items-center h-[65vh] sm:bg-gray-200  xl:max-2xl:h-[70vh]">
         <h1 className="text-3xl my-5 sm:text-5xl font-thin text-center sm:p-12">
           Why choose HisaabKitaab?
         </h1>
@@ -138,7 +138,7 @@ const Branding = () => {
 
         <section
           className="flex justify-center flex-wrap w-full overflow-scroll gap-3 p-5 sm:gap-15 xl:max-2xl:gap-4"
-          data-aos="fade-down"
+          data-aos="fade-up"
         >
           <Review
             user="Nitish Verma"
