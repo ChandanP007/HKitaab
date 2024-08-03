@@ -1,8 +1,8 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addTransaction } from "../../hooks/userActions/addTransaction";
 import { useActiveActionContext } from "../../context/siteContext";
 import { generateId } from "../../utils/generateId";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 type CardProps = {
   gst: string;
@@ -15,6 +15,7 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
   const [pdfUrl, setPdfUrl] = useState<string>("");
   const [pdf, setPdf] = useState<any>("");
   const [submission, setSubmission] = useState<boolean>(false);
+  const [transactionSuccess, setTransactionSuccess] = useState<boolean>(false);
 
   //values
   const [visibility, setVisibility] = useState<any>({
@@ -46,7 +47,7 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
     console.log(file);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     //check if the user has uploaded the pdf file and the transaction details
     if (
       !transaction.pdf ||
@@ -58,149 +59,190 @@ const AddTransaction = ({ gst, btype }: CardProps) => {
       return;
     }
     setSubmission(true);
-    addTransaction(transaction, pdf, clientDomain, user.user, receiver);
-    
+    let makeTransaction = await addTransaction(
+      transaction,
+      pdf,
+      clientDomain,
+      user.user,
+      receiver
+    );
+    if (makeTransaction) {
+      setTransactionSuccess(true);
+      setTimeout(() => {
+        window.location.reload();
+      },1000);
+    }
   };
 
   return (
     <>
       <main className="sm:flex gap-5">
         <div>
-         
-
           {/* Action view */}
-          <div className={`sm:p-5 flex gap-5 ${visibility.addtransaction}`}>
-            <form className="sm:w-[30vw]">
-              <h1 className="font-bold text-lg sm:text-2xl">Add a Transaction </h1>
-              <div className="flex flex-col gap-3 mt-5 sm:mt-0 sm:p-5">
-              <label htmlFor="particulars" className="text-xs text-slate-500">Transaction Details</label>
-                <input
-                  type="text"
-                  id="particulars"
-                  placeholder="Particulars"
-                  value={transaction.particulars}
-                  onChange={(e) =>
-                    setTransaction({
-                      ...transaction,
-                      particulars: e.target.value,
-                    })
-                  }
-                  className="border-2 p-2 rounded-sm outline-black/20 text-sm"
-                />
-                <label htmlFor="transactionId" className="text-xs text-slate-500">Transaction ID</label>
-                <input
-                  type="text"
-                  id="transactionId"
-                  placeholder="Transaction ID"
-                  value={transaction.id}
-                  disabled
-                  className="border-2 p-2 rounded-sm outline-black/20 font-semibold text-sm"
-                />
-                <label htmlFor="receiverGst" className="text-xs text-slate-500">Business GST </label>
-                <input
-                  type="text"
-                  id="receiverGst"
-                  placeholder="Transaction ID"
-                  value={transaction.gst}
-                  disabled
-                  className="border-2 p-2 rounded-sm outline-black/20"
-                />
-                <label htmlFor="transactionDate" className="text-xs text-slate-500">Select transaction date</label>
-                <input
-                  type="date"
-                  id="date"
-                  placeholder="Date"
-                  value={transaction.date}
-                  onChange={(e) =>
-                    setTransaction({ ...transaction, date: e.target.value })
-                  }
-                  className="border-2 p-2 text-xs rounded-sm outline-black/20"
-                />
-                <hr></hr>
-                {/* upload the pdf file */}
-                <label htmlFor="file" className="text-sm font-semibold">Upload Ledger</label>
-                <input
-                  type="file"
-                  id="file"
-                  className="border-2 p-2 rounded-sm outline-black/20 text-xs"
-                  onChange={(e) => handleFileChange(e)}
-                />
-
-                <hr></hr>
-                <section className="flex gap-2 items-center">
+          {!submission ? (
+            <div className={`sm:p-5 flex gap-5 ${visibility.addtransaction}`}>
+              <form className="sm:w-[30vw]">
+                <h1 className="font-bold text-lg sm:text-2xl">
+                  Add a Transaction{" "}
+                </h1>
+                <div className="flex flex-col gap-3 mt-5 sm:mt-0 sm:p-5">
+                  <label
+                    htmlFor="particulars"
+                    className="text-xs text-slate-500"
+                  >
+                    Transaction Details
+                  </label>
                   <input
-                    type="checkbox"
-                    className="h-5 w-5 bg-green-600 checked:border-transparent cursor-pointer "
+                    type="text"
+                    id="particulars"
+                    placeholder="Particulars"
+                    value={transaction.particulars}
+                    onChange={(e) =>
+                      setTransaction({
+                        ...transaction,
+                        particulars: e.target.value,
+                      })
+                    }
+                    className="border-2 p-2 rounded-sm outline-black/20 text-sm"
                   />
-                  <p className="text-xs ">
-                    I have confirmed the details and they are correct, I consent
-                    to the transaction being added to the ledger.
-                  </p>
-                </section>
-                <hr></hr>
-                <button
-                  className="p-2 bg-black/50 font-semibold transition-all hover:bg-black/60 text-white rounded-md mt-5"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSubmit();
-                  }}
-                >
-                  Add Transaction
-                </button>
-              </div>
-            </form>
+                  <label
+                    htmlFor="transactionId"
+                    className="text-xs text-slate-500"
+                  >
+                    Transaction ID
+                  </label>
+                  <input
+                    type="text"
+                    id="transactionId"
+                    placeholder="Transaction ID"
+                    value={transaction.id}
+                    disabled
+                    className="border-2 p-2 rounded-sm outline-black/20 font-semibold text-sm"
+                  />
+                  <label
+                    htmlFor="receiverGst"
+                    className="text-xs text-slate-500"
+                  >
+                    Business GST{" "}
+                  </label>
+                  <input
+                    type="text"
+                    id="receiverGst"
+                    placeholder="Transaction ID"
+                    value={transaction.gst}
+                    disabled
+                    className="border-2 p-2 rounded-sm outline-black/20"
+                  />
+                  <label
+                    htmlFor="transactionDate"
+                    className="text-xs text-slate-500"
+                  >
+                    Select transaction date
+                  </label>
+                  <input
+                    type="date"
+                    id="date"
+                    placeholder="Date"
+                    value={transaction.date}
+                    onChange={(e) =>
+                      setTransaction({ ...transaction, date: e.target.value })
+                    }
+                    className="border-2 p-2 text-xs rounded-sm outline-black/20"
+                  />
+                  <hr></hr>
+                  {/* upload the pdf file */}
+                  <label htmlFor="file" className="text-sm font-semibold">
+                    Upload Ledger
+                  </label>
+                  <input
+                    type="file"
+                    id="file"
+                    className="border-2 p-2 rounded-sm outline-black/20 text-xs"
+                    onChange={(e) => handleFileChange(e)}
+                  />
 
-            {/* Uploaded pdf preview */}
-          </div>
+                  <hr></hr>
+                  <section className="flex gap-2 items-center">
+                    <input
+                      type="checkbox"
+                      className="h-5 w-5 bg-green-600 checked:border-transparent cursor-pointer "
+                    />
+                    <p className="text-xs ">
+                      I have confirmed the details and they are correct, I
+                      consent to the transaction being added to the ledger.
+                    </p>
+                  </section>
+                  <hr></hr>
+                  <button
+                    className="p-2 bg-black/50 font-semibold transition-all hover:bg-black/60 text-white rounded-md mt-5"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleSubmit();
+                    }}
+                  >
+                    Add Transaction
+                  </button>
+                </div>
+              </form>
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
 
         {/* Document Preview before upload */}
-        {
-          !submission ? (
-          <div className={`hidden sm:flex w-[40vw] border-2 ${visibility.pdfview} `}>
+        {!submission ? (
+          <div
+            className={`hidden sm:flex w-[40vw] border-2 ${visibility.pdfview} `}
+          >
             {/* <h3 className="text-xl flex justify-center p-2 text-white bg-black">
               Ledger Preview{" "}
             </h3> */}
             {/* show the pdf preview uploaded by the user in pdf view format */}
-            <embed
-              src={pdfUrl}
-              type="application/pdf"
-              width="100%"
-
-            />
+            <embed src={pdfUrl} type="application/pdf" width="100%" />
           </div>
-          ) : 
+        ) : (
           <>
-            {/* progress spinner  */}
-            <div className="flex mt-[20%] ml-[10vw] flex-col justify-center items-center w-full h-full ">
-              {/* simple spinner */}
-              <svg
-                className="animate-spin h-12 w-12 text-green-700"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-              > 
-                <circle
-                  className="opacity-25"
-                  cx="12"
-                  cy="12"
-                  r="10"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                ></circle>
-                <path
-                  className="opacity-100"
-                  fill="currentColor"
-                  d="M4 12a8 8 8 018-8V0c-4.418 0-11 3.582-8 8z"
-                ></path>  
-              </svg>
-
-              <h2 className="text-md font-semibold mt-3">Transaction in Process</h2>
-            </div>
+            {transactionSuccess ? (
+              <div
+                className="flex sm:mt-[40%] sm:ml-[50%] flex-col justify-center items-center w-full h-[40vh] sm:h-full  ">
+                <IoIosCheckmarkCircleOutline className="text-7xl text-green-500" />
+                <h2 className="text-md font-semibold mt-3">
+                  Transaction Success
+                </h2>
+              </div>
+            ) : (
+              <>
+                {/* progress spinner  */}
+                <div className="flex sm:mt-[40%] sm:ml-[50%] flex-col justify-center items-center w-full h-[40vh] sm:h-full ">
+                  <svg
+                    className="animate-spin h-12 w-12 text-green-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-100"
+                      fill="currentColor"
+                      d="M4 12a8 8 8 018-8V0c-4.418 0-11 3.582-8 8z"
+                    ></path>
+                  </svg>
+                  <h2 className="text-sm sm:text-md font-semibold mt-3">
+                    Transaction in Progress
+                  </h2>
+                </div>
+              </>
+            )}
           </>
-        }
-        
-        
+        )}
       </main>
     </>
   );

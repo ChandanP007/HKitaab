@@ -1,5 +1,3 @@
-
-
 import { IoCheckmarkCircle, IoCloseCircleOutline } from "react-icons/io5";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { VscFilePdf } from "react-icons/vsc";
@@ -7,7 +5,7 @@ import { VscFilePdf } from "react-icons/vsc";
 
 const Ledger = (ledger: any) => {
   // Handlers
-  const handleOpen = (pdfurl:string) => {
+  const handleOpen = (pdfurl: string) => {
     window.open(pdfurl, "_blank");
   };
 
@@ -16,10 +14,12 @@ const Ledger = (ledger: any) => {
   return (
     <>
       <section className="">
-        <div className="flex justify-between p-3 bg-white rounded-md shadow-sm w-[270px] sm:w-[330px]">
+        <div className="flex justify-between p-5 bg-white rounded-md shadow-sm w-full sm:w-[330px]">
           <div>
             <div className="flex justify-between w-[295px]">
-              <h3 className="font-semibold text-xs flex pb-4 ">{ledger.transactionDetails.date}</h3>
+              <h3 className="font-semibold text-xs flex pb-4 ">
+                {ledger.transactionDetails.date}
+              </h3>
               <RiDeleteBin5Line
                 title="Delete"
                 className="hidden sm:flex text-black/30 hover:text-black sm:text-xl cursor-pointer"
@@ -35,7 +35,9 @@ const Ledger = (ledger: any) => {
                 <h2 className="font-semibold sm:text-xl">
                   {ledger.id.toUpperCase()}
                 </h2>
-                <h3 className="font-thin text-[10px] mt-2">{ledger.transactionDetails.particulars.slice(0,15)}..</h3>
+                <h3 className="font-thin text-[10px] mt-2">
+                  {ledger.transactionDetails.particulars.slice(0, 15)}..
+                </h3>
               </div>
             </div>
 
@@ -48,14 +50,13 @@ const Ledger = (ledger: any) => {
                 <div className="">
                   {/* <h2 className="font-thin">Them</h2> */}
                   <h1 className="flex flex-col gap-1">
-                    
-                      <p className="flex gap-1">
-                        <IoCheckmarkCircle className="text-green-500 text-xl" />
-                        <span className="text-[12px] sm:text-xs text-black/50">
-                          Confirmed by you
-                        </span>
-                      </p>
-                    
+                    <p className="flex gap-1">
+                      <IoCheckmarkCircle className="text-green-500 text-xl" />
+                      <span className="text-[12px] sm:text-xs text-black/50">
+                        Confirmed by you
+                      </span>
+                    </p>
+
                     {ledger.confirmations.receiver === "yes" ? (
                       <p className="flex gap-1">
                         <IoCheckmarkCircle className="text-green-500 text-xl" />
@@ -77,7 +78,7 @@ const Ledger = (ledger: any) => {
 
               <div>
                 <button
-                  className="hidden sm:block text-xs bg-slate-100 p-1 sm:p-2 cursor-pointer hover:bg-slate-200 border-[1px]"
+                  className=" text-xs bg-slate-100 p-1 sm:p-2 cursor-pointer hover:bg-slate-200 border-[1px]"
                   onClick={() => handleOpen(ledger.ledgerPDF)}
                 >
                   View Ledger
