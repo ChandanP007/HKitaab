@@ -8,6 +8,7 @@ import Demo from "./Demo";
 const Branding = () => {
   return (
     <main>
+      
       <hr className="block sm:hidden border-4"></hr>
       {/* Why choose HisaabKitaab ?  */}
       <section className="mb-24 sm:mb-0 flex flex-col justify-center items-center h-[65vh] sm:bg-gray-200  xl:max-2xl:h-[70vh]">
@@ -91,13 +92,13 @@ const Branding = () => {
         <Demo />
       </section>
 
-      {/* <hr className="block sm:hidden"></hr> */}
-      {/* Features */}
+
+      {/* App Features */}
       <section className="sm:flex sm:m-32 justify-around items-center xl:max-2xl:justify-between">
         <section>
           <h1
             className="text-4xl p-2 mt-10 sm:p-0 sm:mt-0 sm:text-6xl font-bold  "
-            data-aos="fade-right"
+            data-aos="fade-right" data-aos-once="true"
           >
             Empower <br></br>Your Business <br></br> with{" "}
             <br className="hidden sm:block"></br>Cutting-Edge Technology
@@ -110,7 +111,7 @@ const Branding = () => {
         />
         <section
           className="flex items-center flex-col gap-3 py-10 mb-10 sm:mb-0 sm:py-0 text-sm sm:text-md"
-          data-aos="fade-up"
+          data-aos="fade-up" data-aos-once="true"
         >
           <h2 className="bg-gray-300 p-6 sm:p-7 border-[1px] w-[350px] sm:[400px] text-center text-black rounded-xl shadow-lg">
             Automate routine tasks and focus on growing your business
@@ -124,12 +125,8 @@ const Branding = () => {
         </section>
       </section>
 
-      
 
-
-      
-
-      {/* Testinomials */}
+      {/* The Testinomials */}
       <hr className="block sm:hidden border-4"></hr>
       <section className="sm:my-32 h-[75vh] sm:h-[65vh] flex flex-col justify-evenly items-center  bg-gray-100 w-full">
         <h1 className="text-3xl sm:text-5xl font-thin text-center py-10 sm:py-5">

@@ -10,12 +10,14 @@ const AllTransactions = ({businessgst}: any) => {
   //states
   const { clientDomain } = useActiveActionContext();
   const [ledgersData, setAllLedgersData] = useState<any[]>([]);
+  const [ledgersPending, setLedgersPending] = useState<number>(0);
+  const [totalTransactions, setTotalTransactions] = useState<number>(0);
   
   useEffect(() => {
       getLedgers(clientDomain).then((data) => {
       setAllLedgersData(data);
-      console.log(data);
-      
+      setTotalTransactions(data.filter((ledger: any) => ledger.receivedBy.gst === businessgst).length);
+      setLedgersPending(data.filter((ledger: any) => ledger.receivedBy.gst === businessgst && ledger.confirmations.receiver === "pending").length);
       //setting month categories
       // let months = data.map((ledger:any) => {
       //     return ledger.month}
@@ -31,6 +33,18 @@ const AllTransactions = ({businessgst}: any) => {
   return (
     <>
     <hr className="block sm:hidden"/>
+
+    <div className="flex justify-evenly gap-5 p-2">
+           <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
+              <h1 className="text-3xl font-bold font-mono ">{totalTransactions}</h1>
+              <h1 className="font-thin text-xs">Transactions</h1>
+           </div>
+           <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
+              <h1 className="text-3xl font-bold font-mono ">{ledgersPending}</h1>
+              <h1 className="font-thin text-xs">Ledgers Pending</h1>
+           </div>
+         </div>
+
       {/* Search for a transaction or Ledger */}
       <section className="flex gap-2 items-center">
         <input
@@ -59,7 +73,8 @@ const AllTransactions = ({businessgst}: any) => {
           
        
 
-        {/* {allMonths.slice().reverse().map((month) => {
+        {/*
+         {allMonths.slice().reverse().map((month) => {
           return (
             <div className="py-5" key={month}>
               <div className="flex gap-5 overflow-x-scroll no-scrollbar">

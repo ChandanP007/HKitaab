@@ -20,7 +20,7 @@ import {
 import { isAdmin } from "../middlewares/isAdmin.js";
 import { protect } from "../middlewares/protect.js";
 import { singleUpload } from "../middlewares/multer.js";
-import { uploadFile, uploadPDF } from "../utils/uploadFile.js";
+import { uploadFile, uploadLedger } from "../utils/uploadFile.js";
 import { addTransaction, getLedgers } from "../controllers/transactionControllers.js";
 
 //Admin Routes
@@ -43,6 +43,6 @@ router.get("/me/transporters", protect, getMyTransporters);
 router.get("/me/agents", protect, getMyAgents);
 
 router.post("/upload", singleUpload, uploadFile);
-router.post("/uploadpdf", singleUpload, uploadPDF);
+router.post("/uploadledger", singleUpload, uploadLedger);
 
 export default router;

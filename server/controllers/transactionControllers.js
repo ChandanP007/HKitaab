@@ -1,5 +1,5 @@
 import fs from "fs";
-import { uploadPDF } from "../utils/uploadFile.js";
+import { uploadLedger } from "../utils/uploadFile.js";
 
 // Transaction and Ledgers management
 export const addTransaction = async (req, res) => {
@@ -28,7 +28,7 @@ export const addTransaction = async (req, res) => {
     const ledgers = JSON.parse(allLedgers);
     
     //upload the ledger pdf to s3 bucket
-    const ledgerPDF = await uploadPDF(req,res,gst);
+    const ledgerUrl = await uploadLedger(req,res,gst);
 
     const uploader = {id,gst,name,type};
     let receivedBy = JSON.parse(receiver)
@@ -45,7 +45,8 @@ export const addTransaction = async (req, res) => {
       transactionDetails,
       uploadedBy: uploader,
       receivedBy,
-      ledgerPDF,
+      ledgerUrl,
+      fileType: req.file.mimetype,
       confirmations: {
         sender: "success",
         receiver: "pending",

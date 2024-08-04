@@ -1,5 +1,6 @@
+import { FaFileAlt, FaFileImage } from "react-icons/fa";
 import { IoCheckmarkCircle, IoCloseCircleOutline } from "react-icons/io5";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import { RiDeleteBin5Line, RiFileExcel2Line } from "react-icons/ri";
 import { VscFilePdf } from "react-icons/vsc";
 // import { Link } from "react-router-dom";
 
@@ -28,8 +29,18 @@ const Ledger = (ledger: any) => {
 
             <div className="flex gap-3">
               <div className="flex flex-col items-center">
+                {
+                ledger.fileType == "image/jpeg" || ledger.fileType == "image/png" ? (
+                <FaFileImage className="w-12 h-12 sm:w-24 sm:h-24 text-slate-500" />
+                ) 
+                : ledger.fileType == "text/csv" ? (
+                <RiFileExcel2Line className="w-12 h-12 sm:w-24 sm:h-24 text-green-800" />
+                )
+                : ledger.fileType == "application/pdf" ? (
                 <VscFilePdf className="w-12 h-12 sm:w-24 sm:h-24 text-slate-500" />
-                {/* <Link to="/" className="text-sky-700 hover:underline font-thin text-xs">View</Link> */}
+                ) : 
+                 <FaFileAlt className="w-12 h-12 sm:w-24 sm:h-24 text-slate-500" />
+                }
               </div>
               <div>
                 <h2 className="font-semibold sm:text-xl">
@@ -44,11 +55,9 @@ const Ledger = (ledger: any) => {
             <div className="flex justify-between ">
               <div className="flex mt-4 flex-col justify-start gap-1 ">
                 <div className="">
-                  {/* <h2 className="font-thin">You</h2> */}
                 </div>
 
                 <div className="">
-                  {/* <h2 className="font-thin">Them</h2> */}
                   <h1 className="flex flex-col gap-1">
                     <p className="flex gap-1">
                       <IoCheckmarkCircle className="text-green-500 text-xl" />
@@ -79,9 +88,9 @@ const Ledger = (ledger: any) => {
               <div>
                 <button
                   className=" text-xs bg-slate-100 p-1 sm:p-2 cursor-pointer hover:bg-slate-200 border-[1px]"
-                  onClick={() => handleOpen(ledger.ledgerPDF)}
+                  onClick={() => handleOpen(ledger.ledgerUrl)}
                 >
-                  View Ledger
+                  View Ledger 
                 </button>
               </div>
             </div>

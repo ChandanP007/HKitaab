@@ -12,7 +12,6 @@ export default function Demo() {
   const nextImage = () => {
     setCurrent((prev) => (prev + 1) % images.length);
   };
- 
 
   //auto scroll
   useEffect(() => {
@@ -21,7 +20,7 @@ export default function Demo() {
   }, []);
 
   //sliding transition
-  const slideStyle = { 
+  const slideStyle = {
     transform: `translateX(-${currentImage * 100}%)`,
     transition: "transform 0.5s ease-in-out",
   };
@@ -29,11 +28,15 @@ export default function Demo() {
   return (
     <>
       <main className="flex flex-col-reverse sm:flex sm:flex-row justify-center sm:justify-center xl:max-2xl:justify-between p-2 py-5 sm:p-5 h-[85vh] sm:h-[80vh] items-center bg-gray-900 text-white">
-      
-        <section className="flex gap-6 sm:gap-10 flex-col sm:w-[40vw]" >
-          <h1 className="py-2 text-white text-xs sm:text-md font-thin">HisaabKitaab.io</h1>
-          
-          <h2 className="text-3xl px-0 sm:p-3 sm:text-6xl font-thin" data-ao="fade">
+        <section className="flex gap-6 sm:gap-10 flex-col sm:w-[40vw]" data-aos="fade">
+          <h1 className="py-2 text-white text-xs sm:text-md font-thin">
+            HisaabKitaab.io
+          </h1>
+
+          <h2
+            className="text-3xl px-0 sm:p-3 sm:text-6xl font-thin"
+            data-ao="fade"
+          >
             Here Are 4 Simple Steps <br />
             to Make a Transaction and <br /> Upload Your Ledger
           </h2>
@@ -42,13 +45,12 @@ export default function Demo() {
             <li> Your data is stored in our secure database.</li>
             <li> Ledgers are secured in the cloud.</li>
             <li>
-               Both you and your client can access and validate the ledger.
+              Both you and your client can access and validate the ledger.
             </li>
           </ul>
         </section>
         <section className="" data-aos="zoom-in ">
-          <div className="relative w-full max-w-screen-lg mx-auto overflow-hidden"
-          >
+          <div className="relative w-full max-w-screen-lg mx-auto overflow-hidden">
             <div className="flex" style={slideStyle}>
               {images.map((img, index) => (
                 <img

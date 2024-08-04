@@ -6,17 +6,17 @@ const Footer = () => {
         {/* Top */}
         <section className="my-10 sm:my-32 p-5 flex justify-evenly items-center">
           <section>
-            <h1 className="text-3xl sm:text-5xl tracking-wide font-bold xl:max-2xl:px-[40px]" data-aos="fade-right">
+            <h1 className="text-3xl sm:text-5xl tracking-wide font-bold xl:max-2xl:px-[40px]" data-aos="fade-right" data-aos-once="true">
               Improve your Productivity. <br></br>Use HisaabKitaab to get your{" "}
               <br/> Clients together.
             </h1>
             <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:mt-14 sm:w-[150px] xl:max-2xl:mx-[40px] bg-black/70 hover:bg-black transition-all "
-              onClick={()=>{window.location.href = "/register"}} data-aos="fade-up"
+              onClick={()=>{window.location.href = "/register"}} data-aos="fade-up" data-aos-once="true"
             >
               Get Started
             </button>
           </section>
-          <section className="hidden sm:flex flex-col gap-3" data-aos="fade-down">
+          <section className="hidden sm:flex flex-col gap-3" data-aos="fade-down" data-aos-once="true">
            <img 
            className="h-[600px] w-[800px]"
            src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg?t=st=1722617368~exp=1722620968~hmac=d150562b430fd47d7ae401be5814c755af88a856f0727621a90b5e23ab9e7ad0&w=996" alt="" />

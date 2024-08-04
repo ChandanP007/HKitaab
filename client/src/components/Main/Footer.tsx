@@ -16,11 +16,7 @@ const Footer = () => {
                     <li>Cookie Policy</li>
                 </ul>
             </section>
-            <section className="p-10 flex text-sm gap-10">
-                
-                <input type="text" placeholder="Enter email to receive newsletters" className="p-2 outline-none border-2 shadow-sm w-[250px]"/>
-                <button className="bg-black text-white p-2 text-xs ">Subscribe</button>
-            </section>
+           
           </div>
 
         </main>

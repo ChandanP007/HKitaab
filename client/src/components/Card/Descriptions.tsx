@@ -7,9 +7,7 @@ import { useState } from "react";
 import AllTransactions from "./AllTransactions";
 import AddTransaction from "./AddTransaction";
 import { IoStatsChartOutline } from "react-icons/io5";
-// import { CiCirclePlus, CiSearch } from "react-icons/ci";
 import { FiList, FiMail, FiPlusCircle } from "react-icons/fi";
-
 
 
 type CardProps = {
@@ -133,16 +131,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
 
       {/* Mobile View */}
       <section className="block sm:hidden">
-         <div className="flex gap-3 p-3">
-           <div className="flex flex-col items-center p-2 bg-gray-200 shadow-sm">
-              <h1 className="text-4xl font-bold font-mono ">0</h1>
-              <h1 className="font-thin text-xs">Transactions</h1>
-           </div>
-           <div className="flex flex-col items-center p-2 bg-gray-200 shadow-sm">
-              <h1 className="text-4xl font-bold font-mono ">0</h1>
-              <h1 className="font-thin text-xs">Ledgers Pending</h1>
-           </div>
-         </div>
+         
          
          <hr className="text-black my-3 "/>
 

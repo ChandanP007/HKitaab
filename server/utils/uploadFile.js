@@ -18,7 +18,7 @@ export const uploadFile = async(req) => {
     return myCloud.secure_url;
 }
 
-export const uploadPDF = async(req,res,ownerGst) => {
+export const uploadLedger = async(req,res,ownerGst) => {
     try{
         //S3 Config 
         const s3 = new S3Client(
