@@ -30,7 +30,7 @@ export default function Demo() {
       <main className="flex flex-col-reverse sm:flex sm:flex-row justify-center sm:justify-center xl:max-2xl:justify-between p-2 py-5 sm:p-5 h-[85vh] sm:h-[80vh] items-center bg-gray-900 text-white">
         <section className="flex gap-6 sm:gap-10 flex-col sm:w-[40vw]" data-aos="fade">
           <h1 className="py-2 text-white text-xs sm:text-md font-thin">
-            HisaabKitaab.io
+            HisaabKitaab.ai
           </h1>
 
           <h2

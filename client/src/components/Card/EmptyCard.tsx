@@ -81,7 +81,7 @@ const EmptyCard = () => {
 {/* add business form */}
       <dialog
         open={addBusinessModal}
-        className={` w-full  sm:w-[50vw] ${dheight} top-24 sm:top-32 border-2 bg-gray-100 detail-modal transition-all z-20`}
+        className={` w-full sm:w-[50vw] ${dheight} top-24 sm:top-32 border-2 bg-gray-100 detail-modal transition-all z-20`}
       >
         <div className="">
           <div className="flex justify-between border-2 p-4 font-thin">

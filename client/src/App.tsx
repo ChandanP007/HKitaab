@@ -11,6 +11,7 @@ import Home from './pages/HomePage/MainLayout'
 const Register = lazy(()=>import('./pages/AuthPages/register'))
 const Login = lazy(()=>import('./pages/AuthPages/login'))
 const MyProfile = lazy(()=>import('./components/Main/MyProfile'))
+const Transaction = lazy(()=>import('./pages/Businesses/Transaction'))
 
 const App = () => {
 
@@ -23,6 +24,7 @@ const App = () => {
       <Route path="/me/profile" element={<MyProfile/>} />
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
+      <Route path="/transaction/:id" element={<Transaction/>}/>
       <Route path='/' element={<Landing/>}/>
     </Routes>
     {/* <Footer/> */}

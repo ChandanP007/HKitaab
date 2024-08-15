@@ -1,3 +1,4 @@
+
 import {
   FaBook,
   FaHistory
@@ -26,7 +27,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
   const [requestedLedgersGst, setRequestedLedgersGst] = useState<string>();
 
   return (
-    <main>
+    <main >
 {/* Top Heading  */}
       <section className=" bg-gray-300 text-black p-4 font-thin">
         <h1 className=" text-black/70 font-light hidden sm:block">

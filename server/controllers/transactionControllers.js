@@ -107,6 +107,28 @@ export const getLedgers = async (req, res) => {
   }
 }
 
+export const getTransaction = async (req, res) => {
+  try {
+    const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
+    const ledgers = JSON.parse(allLedgers);
+    const { id } = req.params;
+
+    const transaction = ledgers.filter(
+      (ledger) => ledger.transactionDetails.id === id
+    );
+
+    res.json({
+      status: "success",
+      data: transaction,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "error",
+      message: err.message,
+    });
+  }
+}
+
 export const deleteTransaction = async (req, res) => {
   try {
     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
