@@ -23,7 +23,7 @@ const AllTransactions = ({ businessgst }: any) => {
       setLedgersPending(
         data.filter(
           (ledger: any) =>
-            ledger.uploadedBy.gst === businessgst &&
+            (ledger.uploadedBy.gst === businessgst || ledger.receivedBy.gst === businessgst)&&
             ledger.confirmations.receiver === "pending"
         ).length
       );
