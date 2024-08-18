@@ -158,11 +158,7 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
               </span>
          </div>
 
-         {/* <div className="flex flex-col gap-2 items-center mt-5 px-2">
-          <input type="text" placeholder="Search Ledger/Transcationd ID" className="
-            text-xs p-2 w-full border-[1px] outline-none border-gray-300
-          "/>
-          <CiSearch className="text-xl font-bold"/> */}
+         
           <div className="p-3">
           {detailsPane === "Ledgers" && (
               <AllTransactions businessgst={requestedLedgersGst}/>

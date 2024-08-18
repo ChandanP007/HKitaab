@@ -10,21 +10,25 @@ const AllTransactions = ({ businessgst }: any) => {
   const [ledgersData, setAllLedgersData] = useState<any[]>([]);
   const [ledgersPending, setLedgersPending] = useState<number>(0);
   const [totalTransactions, setTotalTransactions] = useState<number>(0);
+  const [searchFilter, setSearchFilter] = useState<string>("");
+  const [showTransactionMeter, setShowTransactionMeter] = useState<boolean>(true);
 
   useEffect(() => {
     getLedgers(clientDomain).then((data) => {
       setAllLedgersData(data);
       setTotalTransactions(
-        data.filter((ledger: any) => ledger.receivedBy.gst === businessgst)
+        data.filter((ledger: any) => ledger.receivedBy.gst == businessgst || ledger.uploadedBy.gst === businessgst)
           .length
       );
       setLedgersPending(
         data.filter(
           (ledger: any) =>
-            ledger.receivedBy.gst === businessgst &&
+            ledger.uploadedBy.gst === businessgst &&
             ledger.confirmations.receiver === "pending"
         ).length
       );
+
+      searchFilter === "" ? setShowTransactionMeter(true) : ""
       //setting month categories
       // let months = data.map((ledger:any) => {
       //     return ledger.month}
@@ -34,28 +38,32 @@ const AllTransactions = ({ businessgst }: any) => {
       // setAllMonths(JSON.parse(JSON.stringify(uniqueMonths)));
     });
     // console.log(businessgst);
-  }, []);
+  }, [searchFilter]);
+  
 
   return (
     <>
       <hr className="block sm:hidden" />
-
-      <div className="flex justify-evenly gap-5 p-2">
-        <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
-          <h1 className="text-3xl font-bold font-mono ">{totalTransactions}</h1>
-          <h1 className="font-thin text-xs">Transactions</h1>
-        </div>
-        <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
-          <h1 className="text-3xl font-bold font-mono ">{ledgersPending}</h1>
-          <h1 className="font-thin text-xs">Ledgers Pending</h1>
-        </div>
-      </div>
+      {
+          showTransactionMeter ? (
+          <div className={`flex justify-evenly gap-5 p-2 transition-all`}>
+            <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
+              <h1 className="text-3xl font-bold font-mono ">{totalTransactions}</h1>
+              <h1 className="font-thin text-xs">Transactions</h1>
+            </div>
+            <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
+              <h1 className="text-3xl font-bold font-mono ">{ledgersPending}</h1>
+              <h1 className="font-thin text-xs">Ledgers Pending</h1>
+            </div>
+          </div>) : <> </>
+      }
 
       {/* Search for a transaction or Ledger */}
       <section className="flex gap-2 items-center">
         <input
           type="text"
           placeholder="Search for a transaction or Ledger"
+          onKeyUp={(key:any)=>{setSearchFilter(key.target.value); console.log(searchFilter); setShowTransactionMeter(false)}}
           className="flex border-2 p-2 text-xs sm:p-3 sm:text-md my-4 w-full outline-sky-500"
           // onFocus={(e) => e.target.placeholder = ""}
         />
@@ -68,11 +76,11 @@ const AllTransactions = ({ businessgst }: any) => {
         {ledgersData.filter(
           (ledger) =>
             ledger.receivedBy.gst === businessgst ||
-            ledger.uploadedBy.gst === businessgst
+            ledger.uploadedBy.gst === businessgst 
         ).length === 0 && (
           <div className="flex h-full justify-center items-center py-10">
             <p className="text-sm sm:text-lg font-thin">
-              No transactions have been made yet.
+              No transactions has been made yet.
             </p>
           </div>
         )}
@@ -84,8 +92,9 @@ const AllTransactions = ({ businessgst }: any) => {
               ledgersData
                 .filter(
                   (ledger) =>
-                    ledger.receivedBy.gst === businessgst ||
-                    ledger.uploadedBy.gst === businessgst
+                    (ledger.id).toLowerCase().includes(searchFilter.toLowerCase())  && 
+                    (ledger.receivedBy.gst === businessgst ||
+                    ledger.uploadedBy.gst === businessgst)
                 ).reverse()
                 .map((ledger) => {
                   return <Ledger key={ledger.id} {...ledger} />;

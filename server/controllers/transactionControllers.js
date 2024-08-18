@@ -111,15 +111,55 @@ export const getTransaction = async (req, res) => {
   try {
     const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
     const ledgers = JSON.parse(allLedgers);
+
+    const businesses = fs.readFileSync("./db/businesses.json", "utf-8");
+    const allBusinesses = JSON.parse(businesses);
+
+    const user = req.user.userId;
+    const requestMaker = allBusinesses.filter((business) => business.id === user)[0]
+    const {name, gst} = requestMaker
+    const clientInfo = {name,gst}
     const { id } = req.params;
 
     const transaction = ledgers.filter(
       (ledger) => ledger.transactionDetails.id === id
     );
 
+    transaction.push(clientInfo)
+    
+
     res.json({
       status: "success",
       data: transaction,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "error",
+      message: err.message,
+    });
+  }
+}
+
+export const patchTransaction = async (req, res) => {
+  try {
+    const allLedgers = fs.readFileSync("./db/ledgers.json", "utf-8");
+    const ledgers = JSON.parse(allLedgers);
+    const { id } = req.params;
+
+    const transaction = ledgers.filter(
+      (ledger) => ledger.transactionDetails.id === id
+    );
+
+    transaction[0].confirmations = {
+      "sender" : "success",
+      "receiver": "success"
+    };
+
+    fs.writeFileSync("./db/ledgers.json", JSON.stringify(ledgers));
+
+    res.json({
+      message: "Transaction updated successfully",
+      
     });
   } catch (err) {
     res.status(500).json({

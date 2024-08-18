@@ -75,18 +75,12 @@ const Ledger = (ledger: any) => {
 
                 <div className="">
                   <h1 className="flex flex-col gap-2">
-                    <p className="flex gap-1">
-                      <IoCheckmarkCircle className="text-green-500 text-xl" />
-                      <span className="text-[12px] sm:text-xs text-black/50">
-                        Confirmed by you
-                      </span>
-                    </p>
 
-                    {ledger.confirmations.receiver === "yes" ? (
+                  {ledger.confirmations.sender === "success" ? (
                       <p className="flex gap-1">
                         <IoCheckmarkCircle className="text-green-500 text-xl" />
                         <span className="text-xs text-black/50">
-                          Confirmed by them
+                          Confirmed by Sender
                         </span>
                       </p>
                     ) : (
@@ -97,6 +91,25 @@ const Ledger = (ledger: any) => {
                         </span>
                       </p>
                     )}
+
+
+                    {ledger.confirmations.receiver === "success" ? (
+                      <p className="flex gap-1">
+                        <IoCheckmarkCircle className="text-green-500 text-xl" />
+                        <span className="text-xs text-black/50">
+                          Confirmed by Receiver
+                        </span>
+                      </p>
+                    ) : (
+                      <p className="flex gap-1">
+                        <IoCloseCircleOutline className="text-red-500 text-xl" />
+                        <span className="text-[12px] sm:text-xs text-black/50">
+                          Not Confirmed yet
+                        </span>
+                      </p>
+                    )}
+
+
                   </h1>
                 </div>
               </div>

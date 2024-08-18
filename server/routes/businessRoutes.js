@@ -21,7 +21,7 @@ import { isAdmin } from "../middlewares/isAdmin.js";
 import { protect } from "../middlewares/protect.js";
 import { singleUpload } from "../middlewares/multer.js";
 import { uploadFile, uploadLedger } from "../utils/uploadFile.js";
-import { addTransaction, getLedgers, getTransaction } from "../controllers/transactionControllers.js";
+import { addTransaction, getLedgers, getTransaction, patchTransaction } from "../controllers/transactionControllers.js";
 
 //Admin Routes
 router.get("/all", protect, isAdmin, getAllBusinesses);
@@ -35,8 +35,9 @@ router.post("/me/addBusiness", protect, addBusiness);
 router.get("/me/search/:search", searchBusiness);
 router.post("/me/addTransaction", singleUpload, addTransaction);
 router.get("/me/transaction/:id", protect, getTransaction);
+router.patch("/me/transaction/:id", patchTransaction);
 router.get("/me/ledgers", protect, getLedgers);
-// router.post("/me/allledgers", protect, getLedgers2);
+
 
 router.get("/me/buyers", protect, getMyBuyers);
 router.get("/me/sellers", protect, getMySellers);

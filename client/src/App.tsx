@@ -6,7 +6,7 @@ import {lazy, Suspense} from 'react'
 //static & components
 import './styles/app.scss'
 import Loader from './components/Main/Loader'
-import Landing from './pages/HomePage/SiteLanding'
+// import Landing from './pages/HomePage/SiteLanding'
 import Home from './pages/HomePage/MainLayout'
 const Register = lazy(()=>import('./pages/AuthPages/register'))
 const Login = lazy(()=>import('./pages/AuthPages/login'))
@@ -25,7 +25,7 @@ const App = () => {
       <Route path="/register" element={<Register/>}/>
       <Route path="/login" element={<Login/>}/>
       <Route path="/transaction/:id" element={<Transaction/>}/>
-      <Route path='/' element={<Landing/>}/>
+      <Route path='/' element={<Home/>}/>
     </Routes>
     {/* <Footer/> */}
     </Suspense>
