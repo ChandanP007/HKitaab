@@ -8,7 +8,7 @@ import { useState } from "react";
 import AllTransactions from "./AllTransactions";
 import AddTransaction from "./AddTransaction";
 import { IoStatsChartOutline } from "react-icons/io5";
-import { FiList, FiMail, FiPlusCircle } from "react-icons/fi";
+import { FiList, FiPlusCircle } from "react-icons/fi";
 
 
 type CardProps = {

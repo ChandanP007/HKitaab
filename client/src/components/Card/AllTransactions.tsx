@@ -5,12 +5,12 @@ import { getLedgers } from "../../hooks/userActions/getLedgers";
 import { CiSearch } from "react-icons/ci";
 
 // Define the types for the ledger structure
-interface LedgerType {
+interface LedgerData {
   id: string;
-  uploadedBy: {
+  receivedBy: {
     gst: string;
   };
-  receivedBy: {
+  uploadedBy: {
     gst: string;
   };
   confirmations: {
@@ -24,44 +24,54 @@ interface AllTransactionsProps {
 
 const AllTransactions = ({ businessgst }: AllTransactionsProps) => {
   const { clientDomain } = useActiveActionContext();
-  
-  // Properly type state variables
-  const [ledgersData, setAllLedgersData] = useState<LedgerType[]>([]);
+
+  const [ledgersData, setAllLedgersData] = useState<LedgerData[]>([]);
   const [ledgersPending, setLedgersPending] = useState<number>(0);
   const [totalTransactions, setTotalTransactions] = useState<number>(0);
   const [searchFilter, setSearchFilter] = useState<string>("");
   const [showTransactionMeter, setShowTransactionMeter] = useState<boolean>(true);
 
   useEffect(() => {
-    getLedgers(clientDomain).then((data: LedgerType[]) => {
-      setAllLedgersData(data);
+    const fetchData = async () => {
+      try {
+        const data = await getLedgers(clientDomain);
+        
+        // Ensure data matches the expected type
+        if (Array.isArray(data)) {
+          setAllLedgersData(data);
 
-      // Calculate total transactions
-      setTotalTransactions(
-        data.filter(
-          (ledger: LedgerType) =>
-            ledger.receivedBy.gst === businessgst || ledger.uploadedBy.gst === businessgst
-        ).length
-      );
+          // Calculate total transactions
+          const filteredTransactions = data.filter(
+            (ledger) =>
+              ledger.receivedBy.gst === businessgst || ledger.uploadedBy.gst === businessgst
+          );
 
-      // Calculate pending ledgers
-      setLedgersPending(
-        data.filter(
-          (ledger: LedgerType) =>
-            (ledger.uploadedBy.gst === businessgst || ledger.receivedBy.gst === businessgst) &&
-            ledger.confirmations.receiver === "pending"
-        ).length
-      );
+          setTotalTransactions(filteredTransactions.length);
+
+          // Calculate pending ledgers
+          const pendingLedgers = data.filter(
+            (ledger) =>
+              (ledger.uploadedBy.gst === businessgst || ledger.receivedBy.gst === businessgst) &&
+              ledger.confirmations.receiver === "pending"
+          );
+
+          setLedgersPending(pendingLedgers.length);
+        }
+      } catch (error) {
+        console.error("Failed to fetch ledgers:", error);
+      }
 
       // Show the transaction meter if no search filter is applied
-      searchFilter === "" && setShowTransactionMeter(true);
-    });
-  }, [clientDomain, businessgst, searchFilter]); // Added dependencies
+      if (searchFilter === "") setShowTransactionMeter(true);
+    };
+
+    fetchData();
+  }, [clientDomain, businessgst, searchFilter]);
 
   return (
     <>
       <hr className="block sm:hidden" />
-      {showTransactionMeter ? (
+      {showTransactionMeter && (
         <div className="flex justify-evenly gap-5 p-2 transition-all">
           <div className="flex w-full flex-col items-center p-2 bg-gray-200 shadow-sm">
             <h1 className="text-3xl font-bold font-mono">{totalTransactions}</h1>
@@ -72,14 +82,14 @@ const AllTransactions = ({ businessgst }: AllTransactionsProps) => {
             <h1 className="font-thin text-xs">Ledgers Pending</h1>
           </div>
         </div>
-      ) : null}
+      )}
 
       {/* Search for a transaction or Ledger */}
       <section className="flex gap-2 items-center">
         <input
           type="text"
           placeholder="Search for a transaction or Ledger"
-          onKeyUp={(e: React.KeyboardEvent<HTMLInputElement>) => {
+          onKeyUp={(e) => {
             setSearchFilter(e.currentTarget.value);
             setShowTransactionMeter(false);
           }}

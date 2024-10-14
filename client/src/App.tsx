@@ -14,8 +14,6 @@ const Login = lazy(()=>import('./pages/AuthPages/login'))
 const MyProfile = lazy(()=>import('./components/Main/MyProfile'))
 const Transaction = lazy(()=>import('./pages/Businesses/Transaction'))
 
-//fonts
-import '../public/Fonts/Outfit-Regular.ttf'
 
 const App = () => {
 
