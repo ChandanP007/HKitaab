@@ -2,36 +2,55 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <hr className="block sm:hidden border-4"></hr>
         {/* Top */}
-        <section className="my-10 sm:my-32 p-5 flex justify-evenly items-center">
-          <section>
-            <h1 className="text-3xl sm:text-5xl tracking-wide font-bold xl:max-2xl:px-[40px]" data-aos="fade-right" data-aos-once="true">
+
+        <div className="">
+          {/* <div className="xl:p-10 md:mx-3 lg:mx-24 xl:mx-60 shadow-xl border bg-white h-[50vh] flex">
+          <section className="px-5">
+            <h1
+              className="text-3xl md:text-4xl tracking-wide font-bold xl:max-2xl:px-[40px]"
+              // data-aos="fade-right"
+              // data-aos-once="true"
+              >
               Improve your Productivity. <br></br>Use HisaabKitaab to get your{" "}
-              <br/> Clients together.
+              <br /> Clients together.
             </h1>
-            <button className="p-2 w-[110px] sm:p-3 font-bold text-white rounded-md mt-12 sm:mt-14 sm:w-[150px] xl:max-2xl:mx-[40px] bg-black/70 hover:bg-black transition-all "
-              onClick={()=>{window.location.href = "/register"}} data-aos="fade-up" data-aos-once="true"
-            >
+            <button
+              className="p-3 w-[110px] sm:p-2 animate-bounce text-white rounded-md mt-12 sm:mt-14 sm:w-[150px] xl:max-2xl:mx-[40px] bg-black/70 hover:bg-black transition-all "
+              onClick={() => {
+                window.location.href = "/register";
+              }}
+              // data-aos="fade-up"
+              // data-aos-once="true"
+              >
               Get Started
             </button>
           </section>
-          <section className="hidden sm:flex flex-col gap-3" data-aos="fade-down" data-aos-once="true">
-           <img 
-           className="h-[600px] w-[800px]"
-           src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg?t=st=1722617368~exp=1722620968~hmac=d150562b430fd47d7ae401be5814c755af88a856f0727621a90b5e23ab9e7ad0&w=996" alt="" />
+
+          <section>
+              <div>
+                <h1>Sitemap</h1>
+                <ul>
+                  <li>Home</li>
+                  <li>Features</li>
+                  <li>Testimonials</li>
+                  <li>Get Support</li>
+                </ul>
+              </div>
           </section>
-        </section>
+
+          </div> */}
         
 
-        {/* Bottom */}
-        
-        <section className="flex flex-col sm:flex-row items-center justify-between p-5 mt-20 sm:mt-0 sm:p-14 gap-5">
-          <h2 className="text-xl sm:text-2xl font-bold">HisaabKitaab</h2>
-          <p className="font-light text-[12px] sm:text-sm">
-            © 2024 HisaabKitaab Inc. Manage Cookies | Privacy 
+        <section className="flex rounded-t-xl shadow-md bg-white flex-col sm:flex-row items-center justify-between py-8 px-20 sm:mt-0 gap-5">
+          <h2 className="text-xl font-semibold">HisaabKitaab</h2>
+          <p className="font-light text-[10px] ">
+            © 2024 HisaabKitaab Inc. Manage Cookies | Privacy
           </p>
         </section>
+
+
+        </div>
 
       </footer>
     </>

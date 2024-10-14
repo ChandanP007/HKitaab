@@ -3,19 +3,36 @@
 @tailwind utilities;
 
 
+
 //colors
 $color-primary: rgb(46, 58, 46);
 $color-secondary: black;
 $color-text: white;
 
-//fonts
-$font-primary: 'Arial', sans-serif;
-$font-secondary: 'Times New Roman', serif;
 
 //sizes
 $size-small: 12px;
 $size-medium: 15px;
 $size-large: 20px;
+
+.headline-1{
+  @apply max-w-max;
+  background: -webkit-linear-gradient(0deg, indigo, green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.headline-2{
+  @apply max-w-max;
+  background: -webkit-linear-gradient(0deg, black, gray);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html{
+  @apply scroll-smooth
+}
 
 
 
@@ -24,7 +41,6 @@ $size-large: 20px;
 @layer components {
   .header {
     background-color: $color-primary;
-    font-family: $font-primary;
     color: $color-text;
     display: flex;
     justify-content: space-between;
@@ -43,7 +59,6 @@ $size-large: 20px;
   }
   .accountDialog{
     display: flex;
-    // justify-content: right;
     flex-direction: column;
     gap: 1vw;
     background: whitesmoke;

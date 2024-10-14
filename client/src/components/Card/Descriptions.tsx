@@ -138,24 +138,21 @@ const Details = ({ title, src, gst, address, btype }: CardProps) => {
 
           {/* Quick actions  */}
          {/* <h1 className="font-semibold text-sm p-3">Quick actions</h1> */}
-         <div className="flex gap-3 p-3 font-semibold">
+         <div className="flex p-3 font-semibold w-full justify-start gap-3">
               <span 
               onClick={() => {setDetailsPane("Ledgers");setRequestedLedgersGst(gst)}}
-              className={`flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black`}>
+              className={`flex flex-col justify-center rounded-sm shadow-sm items-center gap-2 px-3 py-2 bg-gray-300  text-black`}>
                 <FiList className="text-2xl"/>
                 <h2 className="text-xs">All Transactions</h2>
               </span>
               <span 
               onClick={() => {setDetailsPane("AddTransaction")}}
-              className="flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black">
+              className="flex flex-col justify-center rounded-sm shadow-sm items-center gap-2 px-3 py-2 bg-gray-300  text-black">
                 <FiPlusCircle className="text-2xl"/>
                 <h2 className="text-xs">Add Transaction</h2>
               </span>
               
-              <span className="flex flex-col justify-center rounded-sm items-center gap-2 px-3 py-2 bg-gray-300 text-black">
-                <FiMail className="text-2xl"/>
-                <h2 className="text-xs">Messages</h2>
-              </span>
+              
          </div>
 
          

@@ -69,13 +69,13 @@ const EmptyCard = () => {
   return (
     <>
       <div
-        className={`flex sm:flex-col border-2 hover:shadow-md w-[100px] rounded-md justify-evenly h-[50px] sm:w-[225px] sm:h-[250px] items-center sm:justify-center cursor-pointer ${bgDrop}`}
+        className={`flex sm:flex-col border my-5 hover:shadow-md w-[100px]  justify-center gap-4 rounded-md  h-[50px] sm:w-[225px] sm:h-[250px] items-center cursor-pointer ${bgDrop} w-full`}
         onClick={() => {
           setAddBusinessModal(true); setDialogOpen(true)
         }}
       >
         <FaPlus className="sm:text-5xl text-black/70" />
-        <button className="font-thing sm:p-5">Add</button>
+        <button className="font-thin sm:p-5">Add a new client</button>
       </div>
 
 {/* add business form */}
