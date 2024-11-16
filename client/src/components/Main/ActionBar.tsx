@@ -11,7 +11,7 @@ const ActionBar = () => {
 
   const {Selected, setSelected, isDialogOpen } = useActiveActionContext();
 
-  const handleActionClick= (item: string):any => {
+  const handleActionClick= (item: string) => {
     // handle the click event
     // console.log(item);
     setSelected({
@@ -28,9 +28,8 @@ const ActionBar = () => {
 
 
   return (
-    // Larger Screens
     <main>
-      {/* <h1 className='block sm:hidden text-md font-bold p-4'>Categories</h1> */}
+      <h1 className='block sm:hidden text-md font-bold p-4'>Categories</h1>
       <div className={`flex justify-center sm:py-10 font-semibold ${bgDrop}`}>
         <div className="flex flex-wrap w-[100vw] gap-4 sm:gap-5 sm:justify-center px-5 sm:px-0">
           <div className={`flex flex-col justify-center w-[100px] sm:w-[200px] items-center cursor-pointer border-2 p-2 rounded-md ${Selected.buyers ? "bg-slate-200" : ""}`}
@@ -56,12 +55,7 @@ const ActionBar = () => {
             <IoBriefcase className="text-4xl sm:text-6xl text-slate-800" />
             <h3 className='text-[11px] sm:text-lg'>Agents</h3>
           </div>
-          <div className={`flex flex-col justify-center w-[100px] sm:w-[200px] items-center cursor-pointer border-2 p-2 rounded-md ${Selected.services? "bg-slate-200" : ""}`}
-              onClick={()=>handleActionClick("services")}
-          >
-            <FaGears className="text-4xl sm:text-6xl text-slate-800" />
-            <h3 className='text-[11px] sm:text-lg'>Services</h3>
-          </div>
+         
         </div>
       </div>
       <h1 className='block sm:hidden text-md font-bold p-4 mt-4'>Clients</h1>

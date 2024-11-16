@@ -23,7 +23,7 @@ const Home = () => {
         <>
         <Suspense fallback={<Loader/>}>
         <Header loggedUser={user.user}/>
-        <main className={`w-full flex flex-col justify-center items-center min-h-[80vh]`}>
+        <main className={`w-full flex flex-col justify-start items-center min-h-[80vh]`}>
           <div className="mt-10">
             <ActionBar/>
               <div className="flex justify-center w-full p-5 sm:mb-14">

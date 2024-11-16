@@ -38,7 +38,7 @@ const BusinessCard = ({
     <>
       <div
         onClick={() => setShowDialog(true)}
-        className={`flex sm:flex-col items-center justify-start px-5 gap-2 sm:gap-0 sm:px-0 sm:justify-normal border-[1px] sm:border-2 cursor-pointer sm:rounded-md hover:shadow-md  bg-gray-100 ${bgDrop}`}
+        className={`flex sm:flex-col items-center justify-start px-4 gap-2 sm:gap-0 sm:px-0 sm:justify-normal shadow-sm cursor-pointer rounded-xl sm:rounded-xl  transition-all ease-in-out duration-700 hover:shadow-md  bg-white ${bgDrop}`}
       >
         <img
           src={src}
@@ -64,7 +64,7 @@ const BusinessCard = ({
           </section>
         </div>
         <button
-          className="hidden sm:flex text-black text-sm p-1  hover:underline"
+          className="hidden sm:flex text-black text-sm p-2 hover:underline"
           onClick={() => setShowDialog(true)}
         >
           View

@@ -98,7 +98,7 @@ const AllTransactions = ({ businessgst }: AllTransactionsProps) => {
         <CiSearch className="block sm:hidden text-xl font-bold" />
       </section>
 
-      <section className="overflow-y-scroll max-h-[500px] no-scrollbar select-none">
+      <section className=" max-h-[500px]  select-none overflow-auto">
         {/* All Transactions */}
         {ledgersData.filter(
           (ledger) =>
@@ -112,7 +112,7 @@ const AllTransactions = ({ businessgst }: AllTransactionsProps) => {
         )}
 
         <div className="py-5">
-          <div className="flex gap-8 flex-wrap">
+          <div className="flex gap-8 flex-wrap ">
             {ledgersData.length > 0 &&
               ledgersData
                 .filter(

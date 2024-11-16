@@ -5,37 +5,46 @@ import bcrypt from 'bcryptjs';
 import generateTokenAndSetCookie from '../utils/generateToken.js';
 import { generateId } from '../utils/generateId.js';
 import { uploadFile } from '../utils/uploadFile.js';
+import { sendWelcomeMailToUser } from '../utils/sendMail.js';
 
 
 //controllers
 export const registerBusiness = async(req,res) => {
     try{
-
         //file upload 
         const cloudUrl = await uploadFile(req);
         req.imgUrl = cloudUrl;
-
  
         //receive business data from the request
-        const {gst,name,type,address,email,thumbnail} = JSON.parse(req.body.businessDetails);
+        const {gst,name,ownedBy,type,address,email,thumbnail} = JSON.parse(req.body.businessDetails);
         const {user_email,user_password} = JSON.parse(req.body.loginCreds);
 
-        
-        // Create a new business
+        //check if the business already exists
         const allBusinesses = fs.readFileSync('./db/businesses.json', 'utf-8');
         const allAccounts = fs.readFileSync('./db/accounts.json', 'utf-8');
         const businesses = JSON.parse(allBusinesses);
         const accounts = JSON.parse(allAccounts);
+
+        //check if the business already exists
+        const emailFound = accounts.find(acc => acc.email === user_email);
+        const gstFound = businesses.find(business => business.gst === gst);
+        if(emailFound || gstFound){
+            res.status(400).json({ msg: "Business already registered" });
+            return;
+        }
+        
+        // Create a new business
         const _id = generateId(15);
         const newBusiness = {
             id: _id,
             gst : gst,
             name : name,
+            ownedBy : ownedBy,
             type : type,
             address : address,
-            email : email,
             relationships : [],
             thumbnail : req.imgUrl,
+            createdAt : new Date().toISOString()
         }
         const newAccount = {
             id: _id,
@@ -49,11 +58,15 @@ export const registerBusiness = async(req,res) => {
         fs.writeFileSync('./db/businesses.json', JSON.stringify(businesses));
         fs.writeFileSync('./db/accounts.json', JSON.stringify(accounts));
         
+        //send welcome mail to the user
+        const mailSent = await sendWelcomeMailToUser(user_email);
 
-        //send response
+
         res.status(201).json({
             status: 'success',
             message: 'Business created successfully',
+            mailSentToUser : mailSent
+            
         })
     }
     catch(err){

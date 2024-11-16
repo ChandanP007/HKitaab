@@ -2,6 +2,7 @@
 //imports 
 import fs from 'fs'
 import { generateId } from '../utils/generateId.js'
+import { sendWelcomeMailToUser } from '../utils/sendMail.js'
 
 //Admin controllers
 export const getAllBusinesses = async(req,res) => {
@@ -180,7 +181,6 @@ export const searchBusiness = async(req,res) => {
         })
     }
 }
-
 export const getMyBuyers = async(req,res) => {
     try{
         const user = req.user;
@@ -259,6 +259,29 @@ export const getMyAgents = async(req,res) => {
             user
         })
     }catch(err){
+        res.status(500).json({
+            status: 'error',
+            message: err.message
+        })
+    }
+}
+
+//Business Utils
+export const sendMail = async(req,res) => {
+    try{
+        const email = req.body.email;
+
+        const sent = await sendWelcomeMailToUser(email);
+        if(!sent){
+            throw new Error('Mail not sent');
+
+        }
+        res.status(200).json({
+            status: 'success',
+            message: 'Mail sent successfully'
+        })
+    }
+    catch(err){
         res.status(500).json({
             status: 'error',
             message: err.message

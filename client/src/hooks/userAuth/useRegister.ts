@@ -25,11 +25,7 @@ export const useRegister = async (
     },
   );
   // console.log(response.data);
-  if(response.status === 200){
-    alert("Login Success");
-    return {status: 200, msg: "Registration Success"};
-    }else{
-        return {msg: "Some Error Occured"};
-    }
+  
+  return response.data;
 
 };

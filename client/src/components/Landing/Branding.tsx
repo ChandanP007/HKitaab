@@ -125,11 +125,13 @@ const Branding = () => {
       </section> */}
 
       <section className="flex mt-2 py-10 rounded-b-xl md:p-5 xl:p-10 md:mx-3 lg:mx-24 xl:mx-60 shadow-md bg-white mb-2 ">
+
+
         <div className="p-5 sm:p-12 rounded-md shadow-sm">
           <h1 className=" p-3 font-semibold text-2xl border-l-4 pl-4">
             Get Support | Chat with us
           </h1>
-          <div className="mt-10 w-[360px] sm:w-[600px] pl-4">
+          <div className="mt-10 w-[360px] sm:w-[600px] md:w-[400px] pl-4">
             <form typeof="submit" className="flex flex-col gap-4 " action="https://getform.io/f/aqonxvma" method="POST">
               <label htmlFor="name">Fullname</label>
               <input
@@ -162,6 +164,18 @@ const Branding = () => {
               </button>
             </form>
           </div>
+        </div>
+
+        <div className="hidden sm:block p-5 sm:p-12"> 
+          <h2 className="text-5xl font-bold">
+            Improve your Productivity. Register Now!
+          </h2>
+          <button
+            className="p-3 text-white rounded-md mt-12  bg-black/70 hover:bg-black transition-all "
+            onClick={() => {
+              window.location.href = "/register";
+            }}
+          >Register Now</button>
         </div>
       </section>
     </main>

@@ -14,6 +14,7 @@ import {
   getMySellers,
   getMyTransporters,
   getMyAgents,
+  sendMail
 } from "../controllers/businessControllers.js";
 
 //Middlewares
@@ -46,5 +47,6 @@ router.get("/me/agents", protect, getMyAgents);
 
 router.post("/upload", singleUpload, uploadFile);
 router.post("/uploadledger", singleUpload, uploadLedger);
+router.post("/sendmail", sendMail);
 
 export default router;

@@ -3,6 +3,7 @@ import EmptyCard from "../../components/Card/EmptyCard";
 import { useEffect, useState } from "react";
 import { useActiveActionContext } from "../../context/siteContext";
 
+
 // Desc: Businesses page
 const Businesses = () => {
   const { clientDomain, user, Selected } = useActiveActionContext();
@@ -47,7 +48,7 @@ const Businesses = () => {
     <>
       {/* Larger screens  */}
 
-      <main className="flex w-full sm:justify-center flex-start items-center h-full gap-3 sm:gap-10 flex-wrap sm:max-w-[60vw]">
+      <main className="flex w-full justify-center  flex-center items-center h-full gap-3 sm:gap-14 flex-wrap sm:mx-16 md:mx-16 2xl:mx-96">
         {/* <h1>Results</h1> */}
         {businesses.map((business) => (
           <BusinessCard

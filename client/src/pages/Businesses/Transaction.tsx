@@ -147,7 +147,7 @@ const Transaction = () => {
                 <h2 className="sm:text-lg font-semibold"> You have not confirmed the Transaction yet !</h2>
                 <button className="border-2 sm:border border-green-500 transition-all hover:bg-green-500 hover:text-white p-3 sm:p-2 text-xs rounded-md"
                   onClick={()=>handleConfirmation()}
-                >Confirm</button>
+                >Click to Confirm</button>
                 </section>
                 ) : 
                 <>
