@@ -3,7 +3,6 @@ import { useActiveActionContext } from '../../context/siteContext'
 import { FaTruckMoving } from "react-icons/fa";
 import { IoBriefcase } from "react-icons/io5";
 import { AiFillShop } from "react-icons/ai";
-import { FaGears } from "react-icons/fa6";
 import { PiUsersThreeFill } from "react-icons/pi";
 
 //libs

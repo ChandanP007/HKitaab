@@ -1,10 +1,10 @@
 // imports
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { generateDp } from "../../utils/dpGenerator";
 import { useRegister } from "../../hooks/userAuth/useRegister";
 import { Link } from "react-router-dom";
 import { useActiveActionContext } from "../../context/siteContext";
-import { CgCheck, CgClose, CgSearchLoading } from "react-icons/cg";
+import { CgCheck, CgClose } from "react-icons/cg";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const register = () => {

@@ -7,7 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { useLogout } from "../../hooks/userAuth/useLogout";
 import { searchBusiness } from "../../hooks/userActions/searchBusiness";
 import { CiBellOn, CiLogout } from "react-icons/ci";
-import { FaDoorOpen, FaUser } from "react-icons/fa";
+import {  FaUser } from "react-icons/fa";
 
 const Header = (loggedUser: any) => {
   //states
@@ -19,7 +19,6 @@ const Header = (loggedUser: any) => {
 
   const bgDrop = isDialogOpen ? "blur-sm" : "bg-white";
   const username = loggedUser.loggedUser.name;
-  const firstname = username.split(" ")[0];
   const dp = loggedUser.loggedUser.thumbnail
     ? loggedUser.loggedUser.thumbnail
     : generateDp(username, true);

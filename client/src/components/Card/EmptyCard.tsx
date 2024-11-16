@@ -11,13 +11,13 @@ const EmptyCard = () => {
   const [addBusinessModal, setAddBusinessModal] = useState<boolean>(false);
   const [searchBusinessModal, setSearchBusinessModal] =
     useState<boolean>(false);
-  const [businessLogo, setBusinessLogo] = useState<string>("");
+  // const [businessLogo, setBusinessLogo] = useState<string>("");
 
   const [searchResults, setSearchResults] = useState<any>([]);
   const [searchSelected, setSearchSelected] = useState<boolean>(false);
-  const [businessTitle, setBusinessTitle] = useState<string>("");
+  // const [businessTitle, setBusinessTitle] = useState<string>("");
 
-  const dheight = searchSelected ? "sm:h-[50vh]" : "sm:h-[70vh]";
+  // const dheight = searchSelected ? "sm:h-[50vh]" : "sm:h-[70vh]";
 
   const [newBusiness, setNewBusiness] = useState<any>({
     name: "",
@@ -39,15 +39,15 @@ const EmptyCard = () => {
       address: selectedBusiness.address,
       businessType: selectedBusiness.type,
     });
-    setBusinessLogo(selectedBusiness.thumbnail);
+    // setBusinessLogo(selectedBusiness.thumbnail);
     // addABusinessType = selectedBusiness.businessType;
-    setBusinessTitle(selectedBusiness.name);
+    // setBusinessTitle(selectedBusiness.name);
     setSearchBusinessModal(false);
   };
-  const handleFileChange = (e: any) => {
-    const file = e.target.files[0];
-    setBusinessLogo(URL.createObjectURL(file));
-  };
+  // const handleFileChange = (e: any) => {
+  //   const file = e.target.files[0];
+  //   setBusinessLogo(URL.createObjectURL(file));
+  // };
   const handleSubmit = (e: any) => {
     e.preventDefault();
     console.log(newBusiness);
@@ -107,8 +107,8 @@ const EmptyCard = () => {
                   address: "",
                   businessType: "buyer",
                 });
-                setBusinessLogo("");
-                setBusinessTitle("");
+                // setBusinessLogo("");
+                // setBusinessTitle("");
               }}
             />
           </div>
