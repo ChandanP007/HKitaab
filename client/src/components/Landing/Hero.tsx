@@ -58,14 +58,17 @@ const Hero = () => {
                 <img
                   src="https://avatar.iran.liara.run/public/boy"
                   className="h-8 sm:h-12 sm:w-12 border-white border-2 shadow-md rounded-full"
+                  loading="lazy"
                 />
                 <img
                   src="https://avatar.iran.liara.run/public/girl"
                   className="h-8 sm:h-12 sm:w-12 border-white border-2 shadow-md rounded-full"
+                  loading="lazy"
                 />
                 <img
                   src="https://avatar.iran.liara.run/username?username=Random+Person"
                   className="h-8 sm:h-12 sm:w-12 border-white border-2 shadow-md rounded-full"
+                  loading="lazy"
                 />
               </div>
               <p className="text-sm">Trusted by 500+ Clients</p>

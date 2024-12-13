@@ -37,6 +37,7 @@ export default function Demo() {
                   src={img}
                   alt={`Slide ${index + 1}`}
                   className="flex-shrink-0"
+                  loading="lazy"
                 />
               ))}
             </div>
