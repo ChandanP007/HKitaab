@@ -46,7 +46,7 @@ const Branding = () => {
               <div className="flex flex-col sm:flex-row sm:shadow sm:rounded-xl items-center " key={index}>
                 <div
                   className="flex items-center flex-col cursor-pointer transition-all duration-500  p-5 sm:rounded-xl sm:w-[200px] "
-                  // data-aos="fade"
+                  data-aos="fade"
                 >
                   {feature.icon}
                   <p className="font-semibold w-[170px] text-[20px] sm:text-[12px] sm:max-w-[10ch]">
@@ -73,9 +73,9 @@ const Branding = () => {
         data-aos="fade"
         >
           <section className="flex flex-col items-center ">
-            <video className="w-[300px] md:w-[1100px] lg:w-[700px] " autoPlay muted loop>
+            {/* <video className="w-[300px] md:w-[1100px] lg:w-[700px] " autoPlay muted loop>
               <source src="./Images/store.mp4" type="video/mp4" />
-            </video>
+            </video> */}
           </section>
 
           <div className="max-w-[150ch] px-10 sm:px-14 py-14" 
@@ -110,7 +110,7 @@ const Branding = () => {
       {/* Application Demo  */}
       <section
         className="pb-20 sm:p-5 xl:p-10 md:mx-3 lg:mx-24 xl:mx-60 shadow-xl  bg-white"
-        // data-aos="fade"
+        data-aos="fade"
       >
         <h1 className="p-10 text-4xl font-bold">
           Guides on platform Usage

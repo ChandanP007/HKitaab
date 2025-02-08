@@ -54,7 +54,7 @@ const Hero = () => {
         <section className="flex flex-col sm:flex-row md:mx-3 xl:p-10 lg:mx-24 xl:mx-60 shadow-xl lg:h-fit justify-between bg-white">
           <section className="p-6 sm:p-10">
             <div className=" flex mb-10  gap-2 items-center my-5 text-slate-400 text-sm">
-              <div className="flex -space-x-6">
+              {/* <div className="flex -space-x-6">
                 <img
                   src="https://avatar.iran.liara.run/public/boy"
                   className="h-8 sm:h-12 sm:w-12 border-white border-2 shadow-md rounded-full"
@@ -70,7 +70,7 @@ const Hero = () => {
                   className="h-8 sm:h-12 sm:w-12 border-white border-2 shadow-md rounded-full"
                   loading="lazy"
                 />
-              </div>
+              </div> */}
               <p className="text-sm">Trusted by 500+ Clients</p>
             </div>
 
@@ -109,7 +109,7 @@ const Hero = () => {
             </button>
           </section>
 
-          <section className="my-10 flex flex-col items-center ">
+          {/* <section className="my-10 flex flex-col items-center ">
             <video className="md:w-[1100px] lg:w-[700px] " autoPlay loop muted>
               <source src="/Images/scrolling.mp4" type="video/mp4" />
             </video>
@@ -125,7 +125,7 @@ const Hero = () => {
               {" "}
               Feed your curiosity with our AI-powered tools.
             </p>
-          </section>
+          </section> */}
         </section>
       </main>
 
