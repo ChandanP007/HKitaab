@@ -48,7 +48,7 @@ const Businesses = () => {
     <>
       {/* Larger screens  */}
 
-      <main className="flex w-full justify-center  flex-center items-center h-full gap-3 sm:gap-14 flex-wrap sm:mx-16 md:mx-16 2xl:mx-96">
+      <main className="flex w-full justify-center items-center h-full gap-3 sm:gap-14 flex-wrap sm:mx-16 md:mx-16 2xl:mx-96">
         {/* <h1>Results</h1> */}
         {businesses.map((business) => (
           <BusinessCard

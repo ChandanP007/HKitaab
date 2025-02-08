@@ -10,6 +10,7 @@ import './styles/app.scss'
 import Loader from './components/Main/Loader'
 import Home from './pages/HomePage/MainLayout'
 import Signup from './pages/AuthPages/signup';
+import NotFoundPage from './pages/HomePage/404';
 const Register = lazy(()=>import('./pages/AuthPages/register'))
 const Login = lazy(()=>import('./pages/AuthPages/login'))
 const MyProfile = lazy(()=>import('./components/Main/MyProfile'))
@@ -31,6 +32,8 @@ const App = () => {
       <Route path="/login" element={<Login/>}/>
       <Route path="/transaction/:id" element={<Transaction/>}/>
       <Route path='/' element={<Home/>}/>
+      <Route path='*' element={<NotFoundPage/>}/>
+
     </Routes>
     {/* <Footer/> */}
     </Suspense>

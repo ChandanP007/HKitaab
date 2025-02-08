@@ -30,7 +30,7 @@ const ActionBar = () => {
     <main>
       <h1 className='block sm:hidden text-md font-bold p-4'>Categories</h1>
       <div className={`flex justify-center sm:py-10 font-semibold ${bgDrop}`}>
-        <div className="flex flex-wrap w-[100vw] gap-4 sm:gap-5 sm:justify-center px-5 sm:px-0">
+        <div className="flex flex-wrap w-full gap-4 sm:gap-5 sm:justify-center sm:px-0">
           <div className={`flex flex-col justify-center w-[100px] sm:w-[200px] items-center cursor-pointer border-2 p-2 rounded-md ${Selected.buyers ? "bg-slate-200" : ""}`}
               onClick={()=>handleActionClick("buyers")}
           >
