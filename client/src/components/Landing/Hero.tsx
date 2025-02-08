@@ -2,9 +2,9 @@ import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { CiDeliveryTruck, CiReceipt } from "react-icons/ci";
-import { MdOutlineQueryStats } from "react-icons/md";
-import { GoShieldCheck } from "react-icons/go";
+// import { CiDeliveryTruck, CiReceipt } from "react-icons/ci";
+// import { MdOutlineQueryStats } from "react-icons/md";
+// import { GoShieldCheck } from "react-icons/go";
 
 const Hero = () => {
   useEffect(() => {
